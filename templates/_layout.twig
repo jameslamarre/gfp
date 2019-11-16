@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- <link rel="manifest" href="manifest.json"> -->
+
+    <!-- <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-starturl" content="/"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+    <!-- <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/assets/favicon.png" /> -->
+    <title>{{ siteName }}</title>
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    <style>
+      html, body {
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .content-wrapper {
+        display: none;
+        position: relative;
+        margin: 8.8rem auto 0;
+      }
+
+      .view-wrapper {
+        margin: 0 auto;
+      }
+
+      .header-dropdown {
+        top: -100%;
+      }
+			.loader {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				top: 40%;
+				left: 50%;
+				margin: 0 auto;
+				transform: translate3d(-50%, -50%, 0);
+				z-index: 10000;
+				opacity: 0;
+				animation: fadein 0.2s ease-in-out 0.25s forwards;
+			}
+			.circular {
+			  animation: rotate 2s linear infinite;
+			  height: 100%;
+			  transform-origin: center center;
+			  width: 100%;
+			  position: absolute;
+			  top: 0;
+			  bottom: 0;
+			  left: 0;
+			  right: 0;
+			  margin: auto;
+			}
+
+			.path {
+			  stroke-dasharray: 1, 200;
+			  stroke-dashoffset: 0;
+			  animation: dash 1.5s ease-in-out infinite, color 3s ease-in-out infinite;
+			  stroke-linecap: round;
+			}
+
+			@keyframes fadein {
+			  100% {
+			    opacity: 1;
+			  }
+			}
+
+			@keyframes rotate {
+			  100% {
+			    transform: rotate(360deg);
+			  }
+			}
+
+			@keyframes dash {
+			  0% {
+			    stroke-dasharray: 1, 200;
+			    stroke-dashoffset: 0;
+			  }
+			  50% {
+			    stroke-dasharray: 89, 200;
+			    stroke-dashoffset: -35px;
+			  }
+			  100% {
+			    stroke-dasharray: 89, 200;
+			    stroke-dashoffset: -124px;
+			  }
+			}
+
+			@keyframes color {
+			  100%,
+			  0% {
+			    stroke: #000000;
+			  }
+			}
+    </style>
+  </head>
+  <body>
+    {% include 'globals/loader.twig' %}
+    {% include 'globals/header.twig' %}
+
+		<div class="content-wrapper">
+  		{% block content %}
+  		{% endblock %}
+		</div>
+
+    {% include 'globals/footer.twig' %}
+
+		{% if siteUrl == 'http://localhost:8888/' %}
+	    <link rel="stylesheet" href="/css/app.css" />
+	  {% else %}
+	    <link rel="stylesheet" href="/css/app.min.css" />
+	  {% endif %}
+
+    {% if siteUrl == 'http://localhost:8888/' %}
+	    <script type="text/javascript" src="/js/bundle.js"></script>
+	    <script src="http://localhost:9091"></script>
+	  {% else %}
+	    <script type="text/javascript" src="/js/bundle.min.js"></script>
+	  {% endif %}
+  </body>
+</html>

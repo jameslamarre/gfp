@@ -1,0 +1,48 @@
+{#
+ # 404 Page template
+ # -------------------
+ #
+ #}
+
+{% extends "_layout" %}
+{% block content %}
+  <div id="page-project" class="view-wrapper">
+
+    {% for entry in craft.entries.section('fourOhFourPage').find()|slice(0,1) %}
+
+      <article class="article-wrapper">
+        <div class="project-details">
+          <div class="col">
+            <h1 class="m-b-1">{{ entry.projectTitle }}</h1>
+            <p class="m-b-2">{{ entry.client }}</p>
+          </div>
+          <div class="col serif">
+            <p>{{ entry.description }}</p>
+          </div>
+        </div>
+
+        <div class="matrix-wrapper">
+
+          {% for block in entry.contentMatrix.all() %}
+
+            {% if block.type == 'fullWidthAsset' %}
+              {% include 'project/fullwidth.twig' %}
+
+            {% elseif block.type == 'sideBySideAssets' %}
+              {% include 'project/sidebyside.twig' %}
+
+            {% elseif block.type == 'fullWidthEmbed' %}
+              {% include 'project/fullWidthEmbed.twig' %}
+
+            {% elseif block.type == 'threeColumns' %}
+              {% include 'project/threecolumns.twig' %}
+
+            {% endif %}
+          {% endfor %}
+        </div>
+  		</article>
+
+    {% endfor %}
+
+  </div>
+{% endblock %}
