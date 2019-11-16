@@ -1,0 +1,40 @@
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+img.lazyloaded {
+    opacity: 1;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.no-mobile {
+  display: inline;
+  position: relative;
+  top: 1px;
+  font-size: 1.5rem;
+
+  @media mq-tablet {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  @media mq-tablet {
+    opacity: 0;
+    transform: translate3d(0, 6rem, 0);
+    transition: all 300ms ease-in-out;
+    will-change: transform;
+
+    &.show {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
