@@ -4,7 +4,22 @@
 
 {% extends "_layout" %}
 {% block content %}
-  <div id="page-index" class="view-wrapper">
+  <div id="page-index" class="">
+    {% for block in entry.contentLockup .all() %}
+      <div class="content-lockup">
+        {% set image = block.lockupImage.one() %}
 
+        {% if image %}
+          <div class="content-lockup__image">
+            {% include 'components/_asset.twig' %}
+          </div>
+        {% endif %}
+
+        <div class="content-lockup__copy">
+          <h1>{{block.lockupHeader}}</h1>
+          <p>{{block.lockupSubhead}}</p>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}

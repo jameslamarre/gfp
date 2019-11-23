@@ -1,5 +1,6 @@
 {
   "require": {
+    "aelvan/imager": "v2.3.0",
     "craftcms/cms": "3.3.16.1",
     "craftcms/redactor": "2.4.0",
     "vlucas/phpdotenv": "^3.4.0"

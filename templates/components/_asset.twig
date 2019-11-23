@@ -1,0 +1,16 @@
+{% set imageTitle = image.title %}
+
+{% if image|length and image.kind == 'image' %}
+  {% set imageTransform = craft.imager.transformImage(image, { width: 2880 }) %}
+  {% set imageUrl = imageTransform.url %}
+{% else %}
+  {% set imageUrl = image.getUrl() %}
+{% endif %}
+
+{% if image.kind == 'image' %}
+  <img class="image" alt="{{ imageTitle }}" src="../{{ imageUrl }}" />
+{% elseif image.kind == 'video' %}
+  <video class="video" {% if controls %}controls{% endif %} {% if autoplay %}autoplay loop{% endif %}>
+    <source src="../{{ imageUrl }}"></source>
+  </video>
+{% endif %}
