@@ -9,12 +9,23 @@
   <div id="" class="view-wrapper">
 
     <article class="article-wrapper">
-      <div class="matrix-wrapper">
-{#
-        {% for block in entry.contentMatrix.all() %}
+      {% if entry.imageField|length %}
+        {% set image = entry.imageField.one() %}
 
-        {% endfor %} #}
-      </div>
+        {% if image %}
+          <div class="view__image">
+            {% include 'components/_asset.twig' %}
+          </div>
+        {% endif %}
+      {% endif %}
+
+      <h1 class="view__title">{{ entry.title }}<h1>
+
+      {% if entry.textField|length %}
+        <div class="view__copy">
+          {{ entry.textField }}
+        </div>
+      {% endif %}
 		</article>
   </div>
 {% endblock %}
