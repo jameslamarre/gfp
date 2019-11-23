@@ -1,3 +1,31 @@
 <header class="header">
+  <div class="header-left">
+    <a href="/">
+      {% include './svg/lockup.twig' %}
+    </a>
+  </div>
 
+  <div class="header-right">
+
+    <div>
+      <div class="header-right__copy">
+        {{ headerCopy.textField }}
+      </div>
+
+      <div class="header-right__button">
+        <a href="" class="button">Donate</a>
+      </div>
+    </div>
+
+    <div class="header-right__nav">
+      <ul>
+        <li class="nav-link">
+          <a href="./about">About</a>
+        </li>
+        <li class="nav-link">
+          <a href="./get-involved">Get Involved</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>

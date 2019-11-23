@@ -1,0 +1,12 @@
+<form class="newsletter-form" action="" method="POST">
+  {{ csrfInput() }}
+  <input type="hidden" name="u" value="">
+  <input type="hidden" name="id" value="">
+
+  <div class="field-line">
+    <input class="form-input" type="text" name="MERGE0" placeholder="Join our mailing list" value="{% if (mailchimpSubscribe is defined) and (not mailchimpSubscribe.success) %}{{ mailchimpSubscribe.values.email }}{% endif %}"/>
+    <label>
+      <input type="submit" name="submit" value="" />
+    </label>
+  </div>
+</form>
