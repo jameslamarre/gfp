@@ -5,9 +5,25 @@
   align-items: center;
   padding: 2.2rem 2.4rem;
 
+  @media mq-desktop {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .footer-left {
     display: flex;
     justify-content: space-between;
     width: 75%;
+
+    @media mq-desktop {
+      flex-wrap: wrap;
+      margin-bottom: 2.2rem;
+    }
+
+    &__contact {
+      @media mq-desktop {
+        margin-bottom: 1.0rem;
+      }
+    }
   }
 }
