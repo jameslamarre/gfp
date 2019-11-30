@@ -471,6 +471,12 @@ img.lazyloaded {
   max-height: 750px;
   margin-bottom: 3px;
 }
+.content-lockup:first-of-type {
+  margin-top: 3px;
+}
+.content-lockup:last-of-type {
+  margin-bottom: 0;
+}
 .content-lockup__image {
   position: absolute;
   width: 100%;
