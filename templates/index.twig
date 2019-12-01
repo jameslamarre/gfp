@@ -5,21 +5,38 @@
 {% extends "_layout" %}
 {% block content %}
   <div id="page-index" class="">
-    {% for block in entry.contentLockup .all() %}
-      <div class="content-lockup">
-        {% set image = block.lockupImage.one() %}
+    {% for block in entry.contentLockup.all() %}
+      {% if block.type == 'contentLockup' %}
+        <div class="content-lockup">
+          {% set image = block.lockupImage.one() %}
 
-        {% if image %}
-          <div class="content-lockup__image">
-            {% include 'components/_asset.twig' %}
+          {% if image %}
+            <div class="content-lockup__image">
+              {% include 'components/_asset.twig' %}
+            </div>
+          {% endif %}
+
+          <div class="content-lockup__copy">
+            <h1>{{block.lockupHeader}}</h1>
+            <p class="serif">{{ block.lockupSubhead }}</p>
           </div>
-        {% endif %}
-
-        <div class="content-lockup__copy">
-          <h1>{{block.lockupHeader}}</h1>
-          <p>{{block.lockupSubhead}}</p>
         </div>
-      </div>
+      {% elseif block.type == 'videoLockup' %}
+        <div class="content-lockup">
+          {% set video = block.facebookEmbedLink %}
+
+          {% if video %}
+            <div class="content-lockup__video">
+              {% include 'components/_video.twig' %}
+            </div>
+          {% endif %}
+
+          <div class="content-lockup__copy">
+            <h1>{{block.lockupHeader}}</h1>
+            <p class="serif">{{ block.lockupSubhead }}</p>
+          </div>
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 {% endblock %}

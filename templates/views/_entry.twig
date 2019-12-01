@@ -21,11 +21,37 @@
 
       <h1 class="view__title">{{ entry.title }}<h1>
 
-      {% if entry.textField|length %}
-        <div class="view__copy">
-          {{ entry.textField }}
-        </div>
-      {% endif %}
+      {% for block in entry.entryFields.all() %}
+        {% if block.type == 'entryAsset' %}
+          <div class="content-lockup">
+            {% set image = block.assetField.one() %}
+
+            {% if image %}
+              <div class="content-lockup__image">
+                {% include 'components/_asset.twig' %}
+              </div>
+            {% endif %}
+          </div>
+        {% elseif block.type == 'entryVideoEmbed' %}
+          <div class="content-lockup">
+            {% set video = block.facebookEmbedLink %}
+
+            {% if video %}
+              <div class="content-lockup__video">
+                {% include 'components/_video.twig' %}
+              </div>
+            {% endif %}
+
+            <div class="entry-lockup__caption">
+              <p class="serif">{{ block.videoCaption }}</p>
+            </div>
+          </div>
+        {% elseif block.type == 'entryTextBlock' %}
+          <div class="view__copy">
+            {{ block.textField }}
+          </div>
+        {% endif %}
+      {% endfor %}
 		</article>
   </div>
 {% endblock %}
