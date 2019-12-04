@@ -4,6 +4,9 @@ class App {
 		this.header = document.querySelector('.header');
     this.body = document.querySelector('body');
 
+		this.menuNav = document.querySelector('.header-right__nav');
+		this.menuLinks = document.querySelectorAll('.nav-link');
+
 		this.mobileMenu = document.querySelector('.header-mobile');
 		this.mobileMenuBtn = document.querySelector('.header-mobile__button');
 
@@ -17,6 +20,11 @@ class App {
 
 	bindGlobalEvents() {
 		window.addEventListener('load', this.turnOffLoader.bind(this));
+
+		for (const link of this.menuLinks) {
+			link.addEventListener('onmouseenter', this.navHoverIn.bind(this));
+			link.addEventListener('onmouseout', this.navHoverOut.bind(this));
+		}
 
 		this.mobileMenuBtn.addEventListener('click', this.toggleMenu.bind(this));
 	}
@@ -35,6 +43,17 @@ class App {
     this.mobileMenuBtn.classList.toggle('active');
     this.mobileMenu.classList.toggle('active');
   }
+
+	navHoverIn(e) {
+		console.log('here');
+		this.menuNav.classList.add('hover');
+		e.target.classList.add('active');
+	}
+
+	navHoverOut(e) {
+		this.menuNav.classList.remove('hover');
+		e.target.classList.remove('active');
+	}
 }
 
 new App();

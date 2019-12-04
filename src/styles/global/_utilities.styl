@@ -10,14 +10,48 @@ img.lazyloaded {
 }
 
 .button {
-  border: solid 2px text-purple;
+  border: solid 2px purple;
   padding: 11px 31px;
+  transition: all 100ms ease-in-out;
+
+  &:hover {
+    color: text-beige;
+    background-color: purple;
+  }
+}
+
+.newsletter-form {
+  .field-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .submit-wrapper {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    margin-left: 16px;
+    background-color: purple;
+    border-radius: 50%;
+
+    svg {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
 }
 
 .form-input {
   min-width: 260px;
   padding: 14px 19px;
-  border: solid 2px text-purple;
+  border: solid 2px purple;
   font-size: 18px;
   font-family: Druk;
   color: text-purple;
