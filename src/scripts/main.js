@@ -4,8 +4,7 @@ class App {
 		this.header = document.querySelector('.header');
     this.body = document.querySelector('body');
 
-		this.menuNav = document.querySelector('.header-right__nav');
-		this.menuLinks = document.querySelectorAll('.nav-link');
+		this.blobs = document.querySelectorAll('.blob');
 
 		this.mobileMenu = document.querySelector('.header-mobile');
 		this.mobileMenuBtn = document.querySelector('.header-mobile__button');
@@ -20,11 +19,8 @@ class App {
 
 	bindGlobalEvents() {
 		window.addEventListener('load', this.turnOffLoader.bind(this));
-
-		for (const link of this.menuLinks) {
-			link.addEventListener('onmouseenter', this.navHoverIn.bind(this));
-			link.addEventListener('onmouseout', this.navHoverOut.bind(this));
-		}
+		// window.addEventListener('scroll', this.trackScroll.bind(this));
+		document.addEventListener('mousemove', this.mouseListener.bind(this));
 
 		this.mobileMenuBtn.addEventListener('click', this.toggleMenu.bind(this));
 	}
@@ -32,6 +28,10 @@ class App {
 	turnOffLoader() {
 		this.loader.parentNode.removeChild(this.loader);
 		this.content.style.display = 'block';
+
+		for (let i = 0; i < this.blobs.length; i++) {
+			this.blobs[i].style.opacity = '80%';
+		}
 
 		if (this.footer) {
 			this.footer.classList.add('show');
@@ -44,15 +44,22 @@ class App {
     this.mobileMenu.classList.toggle('active');
   }
 
-	navHoverIn(e) {
-		console.log('here');
-		this.menuNav.classList.add('hover');
-		e.target.classList.add('active');
+	trackScroll() {
+		let offset = window.pageYOffset;
+		if (offset > 0) {
+			this.header.classList.add('scroll');
+		} else {
+			this.header.classList.remove('scroll')
+		}
 	}
 
-	navHoverOut(e) {
-		this.menuNav.classList.remove('hover');
-		e.target.classList.remove('active');
+	mouseListener(e) {
+		let xFactor = e.clientX * 0.01;
+
+		this.blobs[0].style.transform = 'translate3d(' + parseInt(xFactor * 0.2) + 'px, ' + parseInt(xFactor * -0.7) + 'px, 0)';
+		this.blobs[1].style.transform = 'translate3d(' + parseInt(xFactor * 0.6) + 'px, ' + parseInt(xFactor * 0.2) + 'px, 0)';
+		this.blobs[2].style.transform = 'translate3d(' + parseInt(xFactor * 0.8) + 'px, ' + parseInt(xFactor * -0.8) + 'px, 0)';
+		this.blobs[3].style.transform = 'translate3d(' + parseInt(xFactor * 0.8) + 'px, ' + parseInt(xFactor * 0.2) + 'px, 0)';
 	}
 }
 

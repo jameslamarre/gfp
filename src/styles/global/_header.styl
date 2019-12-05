@@ -1,14 +1,72 @@
 .header {
 
   display: flex;
+  // position: fixed;
+  position: relative;
+  // top: 0;
   padding: 2.2rem 2.4rem;
-  border-bottom: solid 2px purple;
+  background-color: white;
+  // z-index: 9999;
+
+  // &.scroll {
+  //   .header-left,
+  //   .header-right--copy {
+  //     transform: scale3d(0,0,0);
+  //     visibility: collapse;
+  //   }
+  // }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    transition: margin 1000ms ease-in-out, opacity 300ms ease-in-out;
+
+    &--one {
+      width: 100px;
+      height: 100px;
+      top: 0;
+      left: 0;
+      background-color: purple;
+      box-shadow: 0 0 75px 75px purple;
+    }
+
+    &--two {
+      width: 150px;
+      height: 200px;
+      top: -60%;
+      left: 20%;
+      background-color: orange;
+      box-shadow: 0 0 40px 40px orange;
+    }
+
+    &--three {
+      width: 100px;
+      height: 150px;
+      top: 70%;
+      left: 70%;
+      background-color: aqua;
+      box-shadow: 0 0 35px 35px aqua;
+    }
+
+    &--four {
+      width: 150px;
+      height: 150px;
+      top: 10%;
+      left: 95%;
+      background-color: green;
+      box-shadow: 0 0 50px 50px green;
+    }
+  }
 
   .header-left {
+    position: relative;
     margin-right: 91px;
+    transition: transform 100ms ease-in-out;
   }
 
   .header-right {
+    position: relative;
     width: 100%;
     margin-top: 20px;
 
@@ -20,6 +78,7 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 35px;
+      transition: transform 100ms ease-in-out;
     }
 
     &--button {
@@ -31,16 +90,11 @@
 
       li {
         margin-right: 44px;
-      }
-    }
+        transition: color 100ms ease-in-out;
 
-    &__nav.hover {
-      li {
-        opacity: 50%;
-      }
-
-      li.active {
-        opacity: 100%;
+        &:hover {
+          color: purple;
+        }
       }
     }
 
