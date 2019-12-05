@@ -21,13 +21,43 @@
             <p class="serif">{{ block.lockupSubhead }}</p>
           </div>
         </div>
-      {% elseif block.type == 'videoLockup' %}
+      {% elseif block.type == 'youtubeVideoLockup' %}
         <div class="content-lockup">
           {% set video = block.embedLink %}
 
           {% if video %}
             <div class="content-lockup__video">
-              {% include 'components/_video.twig' %}
+              {% include 'components/_video-youtube.twig' %}
+            </div>
+          {% endif %}
+
+          <div class="content-lockup__copy">
+            <h1>{{block.lockupHeader}}</h1>
+            <p class="serif">{{ block.lockupSubhead }}</p>
+          </div>
+        </div>
+      {% elseif block.type == 'facebookVideoLockup' %}
+        <div class="content-lockup">
+          {% set video = block.embedLink %}
+
+          {% if video %}
+            <div class="content-lockup__video">
+              {% include 'components/_video-facebook.twig' %}
+            </div>
+          {% endif %}
+
+          <div class="content-lockup__copy">
+            <h1>{{block.lockupHeader}}</h1>
+            <p class="serif">{{ block.lockupSubhead }}</p>
+          </div>
+        </div>
+      {% elseif block.type == 'vimeoVideoLockup' %}
+        <div class="content-lockup">
+          {% set video = block.embedLink %}
+
+          {% if video %}
+            <div class="content-lockup__video">
+              {% include 'components/_video-vimeo.twig' %}
             </div>
           {% endif %}
 

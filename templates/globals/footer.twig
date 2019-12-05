@@ -3,9 +3,22 @@
       <div class="footer-left__contact">
         {{ footerCopy.textField }}
       </div>
+    </div>
 
-      <div class="footer-left__handle">
+    <div class="footer-center">
+      <div class="footer-center__handle">
+        {% include 'icons/_icon-facebook.twig' %}
         {{ footerHandle.textField }}
+      </div>
+
+      <div class="footer-center__handle">
+        {% include 'icons/_icon-instagram.twig' %}
+        {{ footerHandle.textField }}
+      </div>
+
+      <div class="footer-center__handle">
+        {% include 'icons/_icon-twitter.twig' %}
+        {{ footerTwitterHandle.textField }}
       </div>
     </div>
 

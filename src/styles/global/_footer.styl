@@ -1,10 +1,9 @@
 .footer {
-
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 2.2rem 2.4rem;
-  border-top: solid 2px text-purple;
+  align-items: flex-start;
+  padding: 3.2rem 2.4rem 6rem;
+  border-top: solid 2px purple;
 
   @media mq-tablet-lg {
     display: flex;
@@ -12,12 +11,9 @@
   }
 
   .footer-left {
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
 
     @media mq-tablet-lg {
-      flex-wrap: wrap;
+      width: 100%;
       margin-bottom: 2.2rem;
     }
 
@@ -25,6 +21,35 @@
       @media mq-tablet-lg {
         margin-bottom: 1.0rem;
       }
+    }
+  }
+
+  .footer-center {
+
+    @media mq-tablet-lg {
+      margin-bottom: 2.2rem;
+    }
+
+    &__handle {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+
+      @media mq-tablet-lg {
+        width: 100%;
+      }
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .footer-right {
+    @media mq-tablet-lg {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
     }
   }
 }

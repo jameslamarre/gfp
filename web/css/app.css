@@ -302,6 +302,7 @@ img.lazyloaded {
 .header {
   display: flex;
   padding: 2.2rem 2.4rem;
+  border-bottom: solid 2px #ac00e5;
 }
 .header .header-left {
   margin-right: 91px;
@@ -336,7 +337,7 @@ img.lazyloaded {
   opacity: 100%;
 }
 .header .header-right--copy {
-  width: calc(100% - 118px);
+  width: 75%;
 }
 .header-mobile {
   display: none;
@@ -441,9 +442,9 @@ img.lazyloaded {
 .footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 2.2rem 2.4rem;
-  border-top: solid 2px #54235c;
+  align-items: flex-start;
+  padding: 3.2rem 2.4rem 6rem;
+  border-top: solid 2px #ac00e5;
 }
 @media all and (max-width: 1024px) {
   .footer {
@@ -451,14 +452,9 @@ img.lazyloaded {
     flex-wrap: wrap;
   }
 }
-.footer .footer-left {
-  display: flex;
-  justify-content: space-between;
-  width: 75%;
-}
 @media all and (max-width: 1024px) {
   .footer .footer-left {
-    flex-wrap: wrap;
+    width: 100%;
     margin-bottom: 2.2rem;
   }
 }
@@ -467,17 +463,43 @@ img.lazyloaded {
     margin-bottom: 1rem;
   }
 }
+@media all and (max-width: 1024px) {
+  .footer .footer-center {
+    margin-bottom: 2.2rem;
+  }
+}
+.footer .footer-center__handle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+@media all and (max-width: 1024px) {
+  .footer .footer-center__handle {
+    width: 100%;
+  }
+}
+.footer .footer-center__handle svg {
+  margin-right: 8px;
+}
+@media all and (max-width: 1024px) {
+  .footer .footer-right {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
 .view-wrapper {
   max-width: 939px;
   font-family: "Recife", Times, Serif;
-  padding-bottom: 60px;
+  margin-top: 32px;
+  padding-bottom: 64px;
 }
 .view-wrapper .view__image {
   position: relative;
   width: 100%;
   height: 386px;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 .view-wrapper .view__image img {
   position: relative;
@@ -508,7 +530,7 @@ img.lazyloaded {
   margin-bottom: 3px;
 }
 .content-lockup:first-of-type {
-  margin-top: 3px;
+  margin-top: 0;
 }
 .content-lockup:last-of-type {
   margin-bottom: 0;
@@ -531,7 +553,9 @@ img.lazyloaded {
   transform: translate3d(-50%, -50%, 0);
 }
 .content-lockup__image iframe,
-.content-lockup__video iframe {
+.content-lockup__video iframe,
+.content-lockup__image .fb-video,
+.content-lockup__video .fb-video {
   width: 100%;
   height: 100%;
 }

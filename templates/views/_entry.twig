@@ -5,6 +5,7 @@
  #}
 
 {% extends "_layout" %}
+
 {% block content %}
   <div id="" class="view-wrapper">
 
@@ -38,7 +39,7 @@
 
             {% if video %}
               <div class="content-lockup__video">
-                {% include 'components/_video.twig' %}
+                {% include 'components/_video-facebook.twig' %}
               </div>
             {% endif %}
 
@@ -54,4 +55,12 @@
       {% endfor %}
 		</article>
   </div>
+
+  {% if entry.backgroundColor %}
+    <style type="text/css">
+      body {
+        background-color: {{ entry.backgroundColor.getHex() }};
+      }
+    </style>
+  {% endif %}
 {% endblock %}
