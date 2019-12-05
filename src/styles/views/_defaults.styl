@@ -22,6 +22,19 @@
       height: auto;
       top: 50%;
       transform: translate3d(0, -50%, 0);
+
+      @media mq-tablet-lg {
+        width: auto;
+        height: 100%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+
+  .article-content {
+    @media mq-tablet-lg {
+      padding: 0 16px;
     }
   }
 
@@ -36,6 +49,14 @@
 
     p {
       font-family: Recife;
+    }
+
+    ul, li {
+      list-style: disc;
+    }
+
+    ul {
+      padding-left: 25px;
     }
   }
 

@@ -154,9 +154,14 @@ h1 {
   font-size: 10rem;
   line-height: 1;
   font-weight: 700;
+  font-family: "Druk", Arial, Sans-Serif;
   margin: 0;
 }
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: 2.8rem;
   line-height: 1.29;
   font-weight: 300;
@@ -550,6 +555,19 @@ img.lazyloaded {
   top: 50%;
   transform: translate3d(0, -50%, 0);
 }
+@media all and (max-width: 1024px) {
+  .view-wrapper .view__image img {
+    width: auto;
+    height: 100%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+@media all and (max-width: 1024px) {
+  .view-wrapper .article-content {
+    padding: 0 16px;
+  }
+}
 .view-wrapper .view__title {
   font-size: 7.8rem;
   font-family: "Druk", Arial, Sans-Serif;
@@ -560,6 +578,13 @@ img.lazyloaded {
 }
 .view-wrapper .view__copy p {
   font-family: "Recife", Times, Serif;
+}
+.view-wrapper .view__copy ul,
+.view-wrapper .view__copy li {
+  list-style: disc;
+}
+.view-wrapper .view__copy ul {
+  padding-left: 25px;
 }
 .content-lockup {
   display: flex;

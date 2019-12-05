@@ -20,39 +20,42 @@
         {% endif %}
       {% endif %}
 
-      <h1 class="view__title">{{ entry.title }}<h1>
+      <div class="article-content">
+        <h1 class="view__title">{{ entry.title }}</h1>
 
-      {% for block in entry.entryFields.all() %}
-        {% if block.type == 'entryAsset' %}
-          <div class="content-lockup">
-            {% set image = block.assetField.one() %}
+        {% for block in entry.entryFields.all() %}
+          {% if block.type == 'entryAsset' %}
+            <div class="content-lockup">
+              {% set image = block.assetField.one() %}
 
-            {% if image %}
-              <div class="content-lockup__image">
-                {% include 'components/_asset.twig' %}
-              </div>
-            {% endif %}
-          </div>
-        {% elseif block.type == 'entryVideoEmbed' %}
-          <div class="content-lockup">
-            {% set video = block.facebookEmbedLink %}
-
-            {% if video %}
-              <div class="content-lockup__video">
-                {% include 'components/_video-facebook.twig' %}
-              </div>
-            {% endif %}
-
-            <div class="entry-lockup__caption">
-              <p class="serif">{{ block.videoCaption }}</p>
+              {% if image %}
+                <div class="content-lockup__image">
+                  {% include 'components/_asset.twig' %}
+                </div>
+              {% endif %}
             </div>
-          </div>
-        {% elseif block.type == 'entryTextBlock' %}
-          <div class="view__copy">
-            {{ block.textField }}
-          </div>
-        {% endif %}
-      {% endfor %}
+          {% elseif block.type == 'entryVideoEmbed' %}
+            <div class="content-lockup">
+              {% set video = block.facebookEmbedLink %}
+
+              {% if video %}
+                <div class="content-lockup__video">
+                  {% include 'components/_video-facebook.twig' %}
+                </div>
+              {% endif %}
+
+              <div class="entry-lockup__caption">
+                <p class="serif">{{ block.videoCaption }}</p>
+              </div>
+            </div>
+          {% elseif block.type == 'entryTextBlock' %}
+            <div class="view__copy">
+              {{ block.textField }}
+            </div>
+          {% endif %}
+        {% endfor %}
+        
+      </div>
 		</article>
   </div>
 
