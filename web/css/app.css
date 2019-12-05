@@ -191,6 +191,7 @@ body {
   visibility: visible;
   margin: 0 auto;
   padding: 0;
+  overflow-x: hidden;
   max-width: 1440px;
   box-sizing: border-box;
   font-size: 10px;
