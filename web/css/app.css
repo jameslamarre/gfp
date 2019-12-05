@@ -568,7 +568,8 @@ img.lazyloaded {
   margin-bottom: 10px;
   text-transform: uppercase;
 }
-.content-lockup__copy h1 p {
+.content-lockup__copy h1 p,
+.content-lockup__copy h1 a {
   font-size: 10rem;
   line-height: 1;
   font-weight: 700;
