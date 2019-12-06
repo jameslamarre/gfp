@@ -5,7 +5,8 @@
   position: relative;
   // top: 0;
   padding: 2.2rem 2.4rem;
-  background-color: white;
+  // background-color: white;
+  border-bottom: solid 2px purple;
   // z-index: 9999;
 
   // &.scroll {
@@ -24,33 +25,54 @@
 
     &--one {
       width: 100px;
-      height: 100px;
-      top: 0;
+      height: 150px;
+      top: -2%;
       left: 0;
       background-color: purple;
       box-shadow: 0 0 75px 75px purple;
+
+      &.secondary {
+        width: 80px;
+        height: 150px;
+        top: -5%;
+        left: -2%;
+      }
     }
 
     &--two {
       width: 150px;
-      height: 200px;
+      height: 250px;
       top: -60%;
-      left: 20%;
+      left: 25%;
       background-color: orange;
       box-shadow: 0 0 40px 40px orange;
+
+      &.secondary {
+        width: 75px;
+        height: 150px;
+        top: -62%;
+        left: 20%;
+      }
     }
 
     &--three {
-      width: 100px;
+      width: 75px;
       height: 150px;
       top: 70%;
       left: 70%;
       background-color: aqua;
       box-shadow: 0 0 35px 35px aqua;
+
+      &.secondary {
+        width: 50px;
+        height: 300px;
+        top: 65%;
+        left: 70%;
+      }
     }
 
     &--four {
-      width: 150px;
+      width: 300px;
       height: 150px;
       top: 10%;
       left: 95%;

@@ -30,7 +30,7 @@ class App {
 		this.content.style.display = 'block';
 
 		for (let i = 0; i < this.blobs.length; i++) {
-			this.blobs[i].style.opacity = '80%';
+			this.blobs[i].style.opacity = '0.55';
 		}
 
 		if (this.footer) {
@@ -54,12 +54,18 @@ class App {
 	}
 
 	mouseListener(e) {
-		let xFactor = e.clientX * 0.01;
+		let xFactor = e.clientX * 0.05;
 
-		this.blobs[0].style.transform = 'translate3d(' + parseInt(xFactor * 0.2) + 'px, ' + parseInt(xFactor * -0.7) + 'px, 0)';
-		this.blobs[1].style.transform = 'translate3d(' + parseInt(xFactor * 0.6) + 'px, ' + parseInt(xFactor * 0.2) + 'px, 0)';
-		this.blobs[2].style.transform = 'translate3d(' + parseInt(xFactor * 0.8) + 'px, ' + parseInt(xFactor * -0.8) + 'px, 0)';
-		this.blobs[3].style.transform = 'translate3d(' + parseInt(xFactor * 0.8) + 'px, ' + parseInt(xFactor * 0.2) + 'px, 0)';
+		this.blobs[0].style.transform = 'translate3d(' + parseInt(xFactor * 0.4) + 'px, ' + parseInt(xFactor * -1.5) + 'px, 0)';
+		this.blobs[1].style.transform = 'translate3d(' + parseInt(xFactor * -2) + 'px, ' + parseInt(xFactor * -1.5) + 'px, 0)';
+
+		this.blobs[2].style.transform = 'translate3d(' + parseInt(xFactor * -0.4) + 'px, ' + parseInt(xFactor) + 'px, 0)';
+		this.blobs[3].style.transform = 'translate3d(' + parseInt(xFactor * -0.6) + 'px, ' + parseInt(xFactor * 0.3) + 'px, 0)';
+
+		this.blobs[4].style.transform = 'translate3d(' + parseInt(xFactor * 1.6) + 'px, ' + parseInt(xFactor * -1.2) + 'px, 0)';
+		this.blobs[5].style.transform = 'translate3d(' + parseInt(xFactor * 2) + 'px, ' + parseInt(xFactor * -1) + 'px, 0)';
+
+		this.blobs[6].style.transform = 'translate3d(' + parseInt(xFactor * 1.2) + 'px, ' + parseInt(xFactor * 0.5) + 'px, 0)';
 	}
 }
 

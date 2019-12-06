@@ -197,7 +197,6 @@ body {
   margin: 0 auto;
   padding: 0;
   overflow-x: hidden;
-  max-width: 1440px;
   box-sizing: border-box;
   font-size: 10px;
   font-family: "Druk", Arial, Sans-Serif;
@@ -309,7 +308,7 @@ img.lazyloaded {
   display: flex;
   position: relative;
   padding: 2.2rem 2.4rem;
-  background-color: #fff;
+  border-bottom: solid 2px #ac00e5;
 }
 .header .blob {
   position: absolute;
@@ -319,30 +318,48 @@ img.lazyloaded {
 }
 .header .blob--one {
   width: 100px;
-  height: 100px;
-  top: 0;
+  height: 150px;
+  top: -2%;
   left: 0;
   background-color: #ac00e5;
   box-shadow: 0 0 75px 75px #ac00e5;
 }
+.header .blob--one.secondary {
+  width: 80px;
+  height: 150px;
+  top: -5%;
+  left: -2%;
+}
 .header .blob--two {
   width: 150px;
-  height: 200px;
+  height: 250px;
   top: -60%;
-  left: 20%;
+  left: 25%;
   background-color: #ffa488;
   box-shadow: 0 0 40px 40px #ffa488;
 }
+.header .blob--two.secondary {
+  width: 75px;
+  height: 150px;
+  top: -62%;
+  left: 20%;
+}
 .header .blob--three {
-  width: 100px;
+  width: 75px;
   height: 150px;
   top: 70%;
   left: 70%;
   background-color: #cdfcfc;
   box-shadow: 0 0 35px 35px #cdfcfc;
 }
+.header .blob--three.secondary {
+  width: 50px;
+  height: 300px;
+  top: 65%;
+  left: 70%;
+}
 .header .blob--four {
-  width: 150px;
+  width: 300px;
   height: 150px;
   top: 10%;
   left: 95%;
@@ -598,7 +615,6 @@ img.lazyloaded {
 }
 .content-lockup:first-of-type {
   margin-top: 0;
-  border-top: solid 2px #ac00e5;
 }
 .content-lockup:last-of-type {
   margin-bottom: 0;
@@ -619,6 +635,13 @@ img.lazyloaded {
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
+}
+@media all and (min-width: 1440px) {
+  .content-lockup__image img,
+  .content-lockup__video img {
+    width: 100%;
+    height: auto;
+  }
 }
 .content-lockup__image iframe,
 .content-lockup__video iframe,
