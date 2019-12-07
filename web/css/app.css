@@ -542,6 +542,10 @@ img.lazyloaded {
     width: 100%;
   }
 }
+.footer .footer-center__handle a {
+  font-size: 18px;
+  font-weight: 300;
+}
 .footer .footer-center__handle svg {
   margin-right: 8px;
 }
