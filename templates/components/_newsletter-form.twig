@@ -1,11 +1,15 @@
 <form class="newsletter-form" action="" method="POST">
   {{ csrfInput() }}
   <input type="hidden" name="action" value="constant-contact/subscribe">
-  <input type="hidden" name="listid" value="12345">
-  {{ redirectInput('thanks') }}
+
+  {% if craft.app.session.hasFlash('notice') %}
+    <p class="message notice">{{ craft.app.session.getFlash('notice') }}</p>
+  {% elseif craft.app.session.hasFlash('error') %}
+    <p class="message error">{{ craft.app.session.getFlash('error') }}</p>
+  {% endif %}
 
   <div class="field-line">
-    <input class="form-input" type="text" name="MERGE0" placeholder="Join our mailing list" value="{% if (mailchimpSubscribe is defined) and (not mailchimpSubscribe.success) %}{{ mailchimpSubscribe.values.email }}{% endif %}"/>
+    <input class="form-input" type="email" name="email" placeholder="Join our mailing list" value=""/>
     <label class="submit-wrapper">
       <input type="submit" name="submit" value=""/>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.563 16.121">
