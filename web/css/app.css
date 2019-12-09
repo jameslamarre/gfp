@@ -557,14 +557,54 @@ img.lazyloaded {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
   padding: 3.2rem 2.4rem 6rem;
   border-top: solid 2px #ac00e5;
+  overflow: hidden;
 }
 @media all and (max-width: 1024px) {
   .footer {
     display: flex;
     flex-wrap: wrap;
   }
+}
+.footer .blob-footer {
+  position: absolute;
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: -1;
+}
+.footer .blob-footer--one {
+  width: 15%;
+  height: 15%;
+  top: 30%;
+  left: 5%;
+  background-color: #ffa488;
+  box-shadow: 0 0 40px 40px #ffa488;
+}
+.footer .blob-footer--two {
+  width: 60%;
+  height: 150px;
+  top: 30%;
+  left: 25%;
+  background-color: #cdfcfc;
+  box-shadow: 0 0 35px 35px #cdfcfc;
+}
+.footer .blob-footer--three {
+  width: 50px;
+  height: 75px;
+  top: 20%;
+  left: 75%;
+  background-color: #dee23b;
+  box-shadow: 0 0 50px 50px #dee23b;
+}
+.footer .blob-footer--four {
+  width: 200px;
+  height: 20px;
+  top: 85%;
+  left: 95%;
+  background-color: #ac00e5;
+  box-shadow: 0 0 75px 75px #ac00e5;
 }
 @media all and (max-width: 1024px) {
   .footer .footer-left {

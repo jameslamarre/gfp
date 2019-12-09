@@ -20,7 +20,10 @@ class App {
 	bindGlobalEvents() {
 		window.addEventListener('load', this.turnOffLoader.bind(this));
 		// window.addEventListener('scroll', this.trackScroll.bind(this));
-		document.addEventListener('mousemove', this.mouseListener.bind(this));
+
+		if (window.innerWidth > 1024) {
+			document.addEventListener('mousemove', this.mouseListener.bind(this));
+		}
 
 		this.mobileMenuBtn.addEventListener('click', this.toggleMenu.bind(this));
 	}
