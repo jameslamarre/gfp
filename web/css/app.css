@@ -249,7 +249,8 @@ img.lazyloaded {
   align-items: center;
   justify-content: center;
 }
-.newsletter-form .submit-wrapper {
+.newsletter-form .submit-wrapper,
+.newsletter-form .ctct-form-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -260,7 +261,8 @@ img.lazyloaded {
   background-color: #ac00e5;
   border-radius: 50%;
 }
-.newsletter-form .submit-wrapper svg {
+.newsletter-form .submit-wrapper svg,
+.newsletter-form .ctct-form-button svg {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -410,7 +412,7 @@ img.lazyloaded {
   height: 100vh;
   top: 0;
   left: 0;
-  background: #cdfcfc;
+  background: #fffaf5;
   z-index: -1;
   transition: opacity 150ms ease-in-out;
 }
@@ -424,12 +426,60 @@ img.lazyloaded {
   opacity: 1;
   z-index: 999;
 }
+.header-mobile .blob-mobile {
+  position: absolute;
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: -1;
+}
+.header-mobile .blob-mobile--one {
+  width: 100px;
+  height: 150px;
+  top: 10%;
+  left: 5%;
+  background-color: #ac00e5;
+  box-shadow: 0 0 75px 75px #ac00e5;
+}
+.header-mobile .blob-mobile--two {
+  width: 150px;
+  height: 250px;
+  top: 30%;
+  left: 25%;
+  background-color: #ffa488;
+  box-shadow: 0 0 40px 40px #ffa488;
+}
+.header-mobile .blob-mobile--three {
+  width: 250px;
+  height: 75px;
+  top: 70%;
+  left: 55%;
+  background-color: #cdfcfc;
+  box-shadow: 0 0 35px 35px #cdfcfc;
+}
+.header-mobile .blob-mobile--four {
+  width: 200px;
+  height: 60px;
+  top: 35%;
+  left: 95%;
+  background-color: #dee23b;
+  box-shadow: 0 0 50px 50px #dee23b;
+}
 .header-mobile__nav {
   width: calc(100% - 68px);
   border-right: solid 2px #54235c;
 }
 .header-mobile__nav .nav-link {
+  position: relative;
   border-bottom: solid 2px #54235c;
+}
+.header-mobile__nav .nav-link:after {
+  content: '+';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  font-size: 32px;
+  transform: translate3d(0, -50%, 0);
+  pointer-events: none;
 }
 .header-mobile__nav .nav-link a {
   display: block;
@@ -501,7 +551,7 @@ img.lazyloaded {
 .header-mobile__button.active .header-mobile__button--bottom {
   width: 2.6rem;
   border-bottom: 2px solid #54235c;
-  transform: rotate(-45deg) translate3d(3px, -5px, 0);
+  transform: rotate(-45deg) translate3d(3px, -6px, 0);
 }
 .footer {
   display: flex;

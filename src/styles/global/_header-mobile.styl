@@ -5,7 +5,7 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background: aqua;
+    background: beige;
     z-index: -1;
     transition: opacity 150ms ease-in-out;
 
@@ -19,12 +19,66 @@
       z-index: 999;
     }
 
+    .blob-mobile {
+      position: absolute;
+      opacity: 0.6;
+      border-radius: 50%;
+      z-index: -1;
+
+      &--one {
+        width: 100px;
+        height: 150px;
+        top: 10%;
+        left: 5%;
+        background-color: purple;
+        box-shadow: 0 0 75px 75px purple;
+      }
+
+      &--two {
+        width: 150px;
+        height: 250px;
+        top: 30%;
+        left: 25%;
+        background-color: orange;
+        box-shadow: 0 0 40px 40px orange;
+      }
+
+      &--three {
+        width: 250px;
+        height: 75px;
+        top: 70%;
+        left: 55%;
+        background-color: aqua;
+        box-shadow: 0 0 35px 35px aqua;
+      }
+
+      &--four {
+        width: 200px;
+        height: 60px;
+        top: 35%;
+        left: 95%;
+        background-color: green;
+        box-shadow: 0 0 50px 50px green;
+      }
+    }
+
     &__nav {
       width: calc(100% - 68px);
       border-right: solid 2px text-purple;
 
       .nav-link {
+        position: relative;
         border-bottom: solid 2px text-purple;
+
+        &:after {
+          content: '+';
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          font-size: 32px;
+          transform: translate3d(0, -50%, 0);
+          pointer-events: none;
+        }
 
         a {
           display: block;
@@ -107,7 +161,7 @@
         .header-mobile__button--bottom {
           width: 2.6rem;
           border-bottom: 2px solid text-purple;
-          transform: rotate(-45deg) translate3d(3px, -5px, 0);
+          transform: rotate(-45deg) translate3d(3px, -6px, 0);
         }
       }
     }
