@@ -702,10 +702,17 @@ img.lazyloaded {
   align-items: flex-end;
   position: relative;
   width: 100%;
+  max-width: 1440px;
   height: 60vh;
-  min-height: 700px;
-  max-height: 750px;
-  margin-bottom: 3px;
+  min-height: 690px;
+  max-height: 690px;
+  margin: 0 auto 3px;
+}
+@media all and (max-width: 850px) {
+  .content-lockup {
+    height: auto;
+    min-height: 340px;
+  }
 }
 .content-lockup:first-of-type {
   margin-top: 0;
@@ -735,6 +742,14 @@ img.lazyloaded {
   .content-lockup__video img {
     width: 100%;
     height: auto;
+  }
+}
+@media all and (max-width: 850px) {
+  .content-lockup__image img,
+  .content-lockup__video img {
+    height: 100%;
+    min-width: 100%;
+    width: auto;
   }
 }
 .content-lockup__image iframe,
