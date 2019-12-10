@@ -69,4 +69,12 @@
       {% endif %}
     {% endfor %}
   </div>
+
+  {% if entry.backgroundColor %}
+    <style type="text/css">
+      body {
+        background-color: {{ entry.backgroundColor.getHex() }};
+      }
+    </style>
+  {% endif %}
 {% endblock %}

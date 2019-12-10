@@ -703,10 +703,17 @@ img.lazyloaded {
   position: relative;
   width: 100%;
   max-width: 1440px;
-  height: 60vh;
+  height: auto;
   min-height: 690px;
-  max-height: 690px;
+  max-height: 760px;
   margin: 0 auto 3px;
+}
+@media all and (min-width: 1440px) {
+  .content-lockup {
+    height: 64vh;
+    min-height: 690px;
+    max-height: 810px;
+  }
 }
 @media all and (max-width: 850px) {
   .content-lockup {
@@ -740,8 +747,8 @@ img.lazyloaded {
 @media all and (min-width: 1440px) {
   .content-lockup__image img,
   .content-lockup__video img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
   }
 }
 @media all and (max-width: 850px) {

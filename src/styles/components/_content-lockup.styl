@@ -5,10 +5,16 @@
   position: relative;
   width: 100%;
   max-width: appMaxWidth;
-  height: 60vh;
+  height: auto;
   min-height: 690px;
-  max-height: 690px;
+  max-height: 760px;
   margin: 0 auto 3px;
+
+  @media mq-desktop-lg {
+    height: 64vh;
+    min-height: 690px;
+    max-height: 810px;
+  }
 
   @media mq-tablet {
     height: auto;
@@ -40,8 +46,8 @@
       transform: translate3d(-50%, -50%, 0);
 
       @media mq-desktop-lg {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
       }
 
       @media mq-tablet {
