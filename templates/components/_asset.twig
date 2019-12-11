@@ -1,7 +1,7 @@
 {% set imageTitle = image.title %}
 
 {% if image|length and image.kind == 'image' %}
-  {% set imageTransform = craft.imager.transformImage(image, { width: 2880 }) %}
+  {% set imageTransform = craft.imager.transformImage(image, { width: 2000 }) %}
   {% set imageUrl = imageTransform.url %}
 {% else %}
   {% set imageUrl = image.getUrl() %}
