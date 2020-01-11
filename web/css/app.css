@@ -724,7 +724,7 @@ img.lazyloaded {
 @media all and (max-width: 640px) {
   .content-lockup {
     height: auto;
-    min-height: 211px;
+    min-height: 232px;
   }
 }
 .content-lockup:first-of-type {
