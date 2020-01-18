@@ -6,6 +6,8 @@ class App {
 
 		this.blobs = document.querySelectorAll('.blob');
 
+		this.nav = document.querySelector('.header-right__nav');
+
 		this.mobileMenu = document.querySelector('.header-mobile');
 		this.mobileMenuBtn = document.querySelector('.header-mobile__button');
 
@@ -19,7 +21,10 @@ class App {
 
 	bindGlobalEvents() {
 		window.addEventListener('load', this.turnOffLoader.bind(this));
-		// window.addEventListener('scroll', this.trackScroll.bind(this));
+		window.addEventListener('scroll', this.trackScroll.bind(this));
+
+		this.content.style.marginTop = this.header.offsetHeight + "px";
+		console.log(this.header.offsetHeight);
 
 		if (window.innerWidth > 1024) {
 			document.addEventListener('mousemove', this.mouseListener.bind(this));
@@ -49,7 +54,8 @@ class App {
 
 	trackScroll() {
 		let offset = window.pageYOffset;
-		if (offset > 0) {
+
+		if (offset > 150) {
 			this.header.classList.add('scroll');
 		} else {
 			this.header.classList.remove('scroll')

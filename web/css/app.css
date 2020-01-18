@@ -184,9 +184,20 @@ a {
 a.default-weight {
   font-weight: 300;
 }
+.nav-link {
+  line-height: 1.1;
+}
 .nav-link a,
 .footer p {
   font-size: 1.8rem;
+}
+.nav-link a {
+  text-transform: uppercase;
+}
+.nav-link--small a {
+  font-family: "Recife", Times, Serif;
+  text-transform: none;
+  font-weight: 600;
 }
 .serif {
   font-family: "Recife", Times, Serif;
@@ -308,9 +319,20 @@ img.lazyloaded {
 }
 .header {
   display: flex;
-  position: relative;
+  position: fixed;
+  top: 0;
   padding: 2.2rem 2.4rem;
+  background-color: #fff;
   border-bottom: solid 2px #ac00e5;
+  z-index: 9999;
+  overflow: hidden;
+}
+.header.scroll .header-left {
+  visibility: hidden;
+  height: 0;
+}
+.header.scroll .header-right__top {
+  display: none;
 }
 .header .blob {
   position: absolute;
@@ -392,15 +414,27 @@ img.lazyloaded {
 .header .header-right--button {
   margin-top: 10px;
 }
-.header .header-right__nav ul {
+.header .header-right__nav {
   display: flex;
 }
-.header .header-right__nav ul li {
+.header .header-right__nav .nav-link-group {
+  display: none;
+}
+.header .header-right__nav .nav-group:hover .nav-link-group {
+  display: block;
+}
+.header .header-right__nav .nav-link {
   margin-right: 44px;
   transition: color 100ms ease-in-out;
 }
-.header .header-right__nav ul li:hover {
+.header .header-right__nav .nav-link:hover {
   color: #ac00e5;
+}
+.header .header-right__nav .nav-link.primary {
+  min-height: 70px;
+}
+.header .header-right__nav .nav-link--small {
+  margin-bottom: 8px;
 }
 .header .header-right--copy {
   width: 75%;

@@ -31,13 +31,21 @@
     </div>
 
     <div class="header-right__nav">
-      <ul>
-        {% for page in pages %}
-          <li class="nav-link">
+      {% for page in pages %}
+        {% set subPage = craft.entries.descendantOf(page) %}
+        <div class="nav-group">
+          <div class="nav-link primary">
             <a href="{{ page.url }}" class="default-weight">{{ page.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+          </div>
+          <ul class="nav-link-group">
+            {% for child in subPage %}
+              <li class="nav-link nav-link--small">
+                <a href="{{ child.url }}">{{ child.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
     </div>
   </div>
 

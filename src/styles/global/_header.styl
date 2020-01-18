@@ -1,21 +1,24 @@
 .header {
 
   display: flex;
-  // position: fixed;
-  position: relative;
-  // top: 0;
+  position: fixed;
+  // position: relative;
+  top: 0;
   padding: 2.2rem 2.4rem;
-  // background-color: white;
+  background-color: white;
   border-bottom: solid 2px purple;
-  // z-index: 9999;
+  z-index: 9999;
+  overflow: hidden;
 
-  // &.scroll {
-  //   .header-left,
-  //   .header-right--copy {
-  //     transform: scale3d(0,0,0);
-  //     visibility: collapse;
-  //   }
-  // }
+  &.scroll {
+    .header-left {
+      visibility: hidden;
+      height: 0;
+    }
+    .header-right__top {
+      display: none;
+    }
+  }
 
   .blob {
     position: absolute;
@@ -107,15 +110,31 @@
       margin-top: 10px;
     }
 
-    &__nav ul {
+    &__nav {
       display: flex;
 
-      li {
+       .nav-link-group {
+         display: none;
+       }
+
+      .nav-group:hover .nav-link-group {
+        display: block;
+      }
+
+      .nav-link {
         margin-right: 44px;
         transition: color 100ms ease-in-out;
 
         &:hover {
           color: purple;
+        }
+
+        &.primary {
+          min-height: 70px;
+        }
+
+        &--small {
+          margin-bottom: 8px;
         }
       }
     }
