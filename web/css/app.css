@@ -320,6 +320,7 @@ img.lazyloaded {
 .header {
   display: flex;
   position: fixed;
+  min-width: 100%;
   top: 0;
   padding: 2.2rem 2.4rem;
   background-color: #fff;
