@@ -2,13 +2,12 @@
 
   display: flex;
   position: fixed;
-  // position: relative;
   min-width: 100%;
   top: 0;
   padding: 2.2rem 2.4rem;
   background-color: white;
   border-bottom: solid 2px purple;
-  z-index: 9999;
+  z-index: 999;
   overflow: hidden;
 
   &.scroll {
@@ -19,6 +18,10 @@
     .header-right__top {
       display: none;
     }
+  }
+
+  @media mq-tablet {
+    position: relative;
   }
 
   .blob {

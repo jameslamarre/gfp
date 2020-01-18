@@ -16,7 +16,7 @@
 
     &.active {
       opacity: 1;
-      z-index: 999;
+      z-index: 9999;
     }
 
     .blob-mobile {
@@ -66,9 +66,21 @@
       width: calc(100% - 68px);
       border-right: solid 2px text-purple;
 
+      .nav-group {
+        padding: 2.6rem 1.7rem;
+        border-bottom: solid 2px text-purple;
+      }
+
+      .nav-link-group {
+         display: none;
+       }
+
+      .nav-group.active .nav-link-group {
+        display: block;
+      }
+
       .nav-link {
         position: relative;
-        border-bottom: solid 2px text-purple;
 
         &:after {
           content: '+';
@@ -80,11 +92,26 @@
           pointer-events: none;
         }
 
-        a {
+        &.primary {
           display: block;
           width: 100%;
           height: 100%;
-          padding: 2.6rem 1.7rem;
+
+          span {
+            pointer-events: none;
+          }
+        }
+
+        &--small {
+          padding: 0 0 1.2rem;
+
+          &:after {
+            content: none;
+          }
+
+          &:first-of-type {
+            padding: 1.2rem 0 1.2rem;
+          }
         }
       }
     }

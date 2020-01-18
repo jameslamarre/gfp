@@ -44,12 +44,18 @@ a {
 }
 
 .nav-link a,
+.nav-link span,
 .footer p {
   font-size: 1.8rem;
 }
 
-.nav-link a {
+.nav-link span {
   text-transform: uppercase;
+  cursor: pointer;
+
+  &.default-weight {
+    font-weight: 300;
+  }
 }
 
 .nav-link--small a {

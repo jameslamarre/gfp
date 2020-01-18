@@ -11,6 +11,9 @@ class App {
 		this.mobileMenu = document.querySelector('.header-mobile');
 		this.mobileMenuBtn = document.querySelector('.header-mobile__button');
 
+		this.mobileMenuLists = document.querySelectorAll('.header-mobile__nav .nav-link.primary');
+		this.mobileMenuGroups = document.querySelectorAll('.header-mobile__nav .nav-link-group');
+
     this.content = document.querySelector('.content-wrapper');
 
 		this.footer = document.querySelector('.footer-wrapper')
@@ -21,16 +24,19 @@ class App {
 
 	bindGlobalEvents() {
 		window.addEventListener('load', this.turnOffLoader.bind(this));
-		window.addEventListener('scroll', this.trackScroll.bind(this));
 
-		this.content.style.marginTop = this.header.offsetHeight + "px";
-		console.log(this.header.offsetHeight);
 
 		if (window.innerWidth > 1024) {
+			this.content.style.marginTop = this.header.offsetHeight + 70 + "px";
+			window.addEventListener('scroll', this.trackScroll.bind(this));
 			document.addEventListener('mousemove', this.mouseListener.bind(this));
 		}
 
 		this.mobileMenuBtn.addEventListener('click', this.toggleMenu.bind(this));
+
+		for (const list of this.mobileMenuLists) {
+			list.addEventListener('click', this.toggleMobileGroups.bind(this));
+		}
 	}
 
 	turnOffLoader() {
@@ -51,6 +57,16 @@ class App {
     this.mobileMenuBtn.classList.toggle('active');
     this.mobileMenu.classList.toggle('active');
   }
+
+	toggleMobileGroups(e) {
+		this.mobileMenuGroups.forEach(function (group, index) {
+			if (group.parentNode.classList.contains('active')) {
+				group.parentNode.classList.remove('active');
+			}
+		});
+
+		e.target.parentNode.classList.add('active');
+	}
 
 	trackScroll() {
 		let offset = window.pageYOffset;
