@@ -34,6 +34,17 @@
     margin-bottom: 0;
   }
 
+  &.video {
+    .content-lockup__copy {
+      pointer-events: none;
+      transition: opacity 200ms ease-in-out;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+  }
+
   &__image,
   &__video {
     position: absolute;
@@ -67,7 +78,8 @@
     }
 
     iframe,
-    .fb-video {
+    .fb-video,
+    video {
       width: 100%;
       height: 100%;
     }

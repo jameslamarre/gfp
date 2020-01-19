@@ -16,6 +16,9 @@ class App {
 
     this.content = document.querySelector('.content-wrapper');
 
+		this.videoLockups = document.querySelectorAll('.content-lockup.video')
+		this.videoCopys = document.querySelectorAll('.content-lockup__copy')
+
 		this.footer = document.querySelector('.footer-wrapper')
 		this.loader = document.querySelector('.loader');
 
@@ -27,7 +30,12 @@ class App {
 
 
 		if (window.innerWidth > 1024) {
-			this.content.style.marginTop = this.header.offsetHeight + 70 + "px";
+			if (window.location.pathname == '/') {
+				this.content.style.marginTop = this.header.offsetHeight + 35 + "px";
+			} else {
+				this.content.style.marginTop = this.header.offsetHeight + 70 + "px";
+			}
+
 			window.addEventListener('scroll', this.trackScroll.bind(this));
 			document.addEventListener('mousemove', this.mouseListener.bind(this));
 		}
@@ -36,6 +44,10 @@ class App {
 
 		for (const list of this.mobileMenuLists) {
 			list.addEventListener('click', this.toggleMobileGroups.bind(this));
+		}
+
+		for (const lockup of this.videoLockups) {
+			lockup.addEventListener('click', this.toggleVideoCopy.bind(this));
 		}
 	}
 
@@ -76,6 +88,16 @@ class App {
 		} else {
 			this.header.classList.remove('scroll')
 		}
+	}
+
+	toggleVideoCopy(e) {
+		const id = e.target.getAttribute('data-id');
+
+		this.videoCopys.forEach(function (copy, index) {
+			if (copy.getAttribute('data-id') == id) {
+				copy.classList.add('hidden');
+			}
+		});
 	}
 
 	mouseListener(e) {

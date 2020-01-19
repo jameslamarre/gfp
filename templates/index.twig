@@ -21,6 +21,21 @@
             <p class="serif">{{ block.lockupSubhead }}</p>
           </div>
         </div>
+      {% elseif block.type == 'videoLockup' %}
+        <div class="content-lockup video">
+          {% set video = block.video.one().filename %}
+
+          {% if video %}
+            <div class="content-lockup__video">
+              {% include 'components/_video.twig' %}
+            </div>
+          {% endif %}
+
+          <div class="content-lockup__copy" data-id="{{ loop.index }}">
+            <h1>{{block.lockupHeader}}</h1>
+            <p class="serif">{{ block.lockupSubhead }}</p>
+          </div>
+        </div>
       {% elseif block.type == 'youtubeVideoLockup' %}
         <div class="content-lockup">
           {% set video = block.embedLink %}
