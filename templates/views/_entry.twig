@@ -5,6 +5,8 @@
  #}
 
 {% extends "_layout" %}
+{% set rowLength = 0 %}
+{% set blockLength = 0 %}
 
 {% block content %}
   <div id="" class="view-wrapper">
@@ -21,40 +23,83 @@
       {% endif %}
 
       <div class="article-content">
-        <h1 class="view__title">{{ entry.title }}</h1>
+        <h1 class="view__title row full">{{ entry.title }}</h1>
 
-        {% for block in entry.entryFields.all() %}
-          {% if block.type == 'entryAsset' %}
-            <div class="content-lockup">
-              {% set image = block.assetField.one() %}
+        <div class="row">
+          {% for block in entry.entryFields.all() %}
+            {% switch block.type %}
+            {% case 'fullWidthColumnBlock' %}
+              {% set blockLength = 3 %}
+            {% case 'doubleColumnBlock' %}
+              {% set blockLength = 2 %}
+            {% case 'singleColumnBlock' %}
+              {% set blockLength = 1 %}
+            {% endswitch %}
 
-              {% if image %}
-                <div class="content-lockup__image">
-                  {% include 'components/_asset.twig' %}
+            {% if rowLength + blockLength > 3 %}
+              </div><div class="row">
+              {% set rowLength = 0 %}
+            {% endif %}
+
+            {% switch block.type %}
+              {% case 'fullWidthColumnBlock' %}
+                <div class="column full {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.textField %}
+                    <div class="view__copy">
+                      {{ block.textField }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.imageField|length %}
+                    {% include 'components/_asset.twig' %}
+                  {% endif %}
+
+                  {% if block.videoEmbedCode %}
+                    {% set video = block.facebookEmbedLink %}
+
+                    {% if video %}
+                      <div class="content-lockup__video">
+                        {% include 'components/_video-facebook.twig' %}
+                      </div>
+                    {% endif %}
+
+                    <div class="entry-lockup__caption">
+                      <p class="serif">{{ block.videoCaption }}</p>
+                    </div>
+                  {% endif %}
                 </div>
-              {% endif %}
-            </div>
-          {% elseif block.type == 'entryVideoEmbed' %}
-            <div class="content-lockup">
-              {% set video = block.facebookEmbedLink %}
 
-              {% if video %}
-                <div class="content-lockup__video">
-                  {% include 'components/_video-facebook.twig' %}
+              {% case 'doubleColumnBlock' %}
+            <div class="column double {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.textField %}
+                    <div class="view__copy">
+                      {{ block.textField }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.imageField|length %}
+                    {% include 'components/_asset.twig' %}
+                  {% endif %}
                 </div>
-              {% endif %}
 
-              <div class="entry-lockup__caption">
-                <p class="serif">{{ block.videoCaption }}</p>
-              </div>
-            </div>
-          {% elseif block.type == 'entryTextBlock' %}
-            <div class="view__copy">
-              {{ block.textField }}
-            </div>
-          {% endif %}
-        {% endfor %}
-        
+              {% case 'singleColumnBlock' %}
+            <div class="column single {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.textField %}
+                    <div class="view__copy">
+                      {{ block.textField }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.imageField|length %}
+                    {% include 'components/_asset.twig' %}
+                  {% endif %}
+                </div>
+
+            {% endswitch %}
+            {% set rowLength = rowLength + blockLength %}
+          {% endfor %}
+        </div>
+
       </div>
 		</article>
   </div>
