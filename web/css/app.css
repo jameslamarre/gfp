@@ -151,19 +151,41 @@
   font-weight: 600;
 }
 h1 {
-  font-size: 10rem;
-  line-height: 1;
+  font-size: 7.8rem;
+  line-height: 1.03;
   font-weight: 700;
+  font-family: "Druk", Arial, Sans-Serif;
+  margin: 0 0 20px;
+}
+h2 {
+  font-size: 3.2rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin: 0;
+}
+h3 {
+  font-size: 3.2rem;
+  line-height: 1.5;
+  font-weight: 300;
   font-family: "Druk", Arial, Sans-Serif;
   margin: 0;
 }
-h2,
-h3,
-h4,
-h5,
+h4 {
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 300;
+  font-family: "Druk", Arial, Sans-Serif;
+  margin: 0;
+}
+h5 {
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 300;
+  margin: 0;
+}
 h6 {
-  font-size: 2.8rem;
-  line-height: 1.29;
+  font-size: 2rem;
+  line-height: 1.6;
   font-weight: 300;
   margin: 0;
 }
@@ -172,17 +194,41 @@ p,
 input,
 li {
   font-size: 2rem;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 300;
   text-decoration: none;
 }
 a {
+  position: relative;
   color: inherit;
   line-height: 1;
   font-weight: 700;
+  transition: color 100ms ease-in-out;
 }
 a.default-weight {
   font-weight: 300;
+}
+a.arrow {
+  font-family: "Druk", Arial, Sans-Serif;
+  font-weight: 500;
+}
+a.arrow:after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 15px;
+  top: 4px;
+  margin-left: 15px;
+  background-image: url("/assets/icons/arrow.svg");
+}
+a.arrow.down:after {
+  width: 16px;
+  height: 17px;
+  top: 3px;
+  background-image: url("/assets/icons/arrow-down.svg");
+}
+p a:hover {
+  color: #ac00e5;
 }
 .nav-link {
   line-height: 1.1;
@@ -203,6 +249,12 @@ a.default-weight {
   font-family: "Recife", Times, Serif;
   text-transform: none;
   font-weight: 600;
+}
+blockquote {
+  font-size: 2.8rem;
+  font-family: "Recife", Times, Serif;
+  font-style: italic;
+  line-height: 1.71;
 }
 .serif {
   font-family: "Recife", Times, Serif;
@@ -327,21 +379,21 @@ img.lazyloaded {
   position: fixed;
   min-width: 100%;
   top: 0;
-  padding: 2.2rem 2.4rem;
+  padding: 2.2rem 2.4rem 3.2rem;
   background-color: #fff;
   border-bottom: solid 2px #ac00e5;
   z-index: 999;
   overflow: hidden;
 }
 .header.scroll {
-  padding: 0.4rem 2.4rem 0;
+  padding: 0.4rem 2.4rem 1.6rem;
 }
 .header.scroll .header-left {
-  visibility: hidden;
-  height: 0;
+  max-height: 0;
 }
 .header.scroll .header-right__top {
-  display: none;
+  max-height: 0;
+  margin-bottom: 0;
 }
 @media all and (max-width: 850px) {
   .header {
@@ -406,8 +458,14 @@ img.lazyloaded {
 }
 .header .header-left {
   position: relative;
+  width: auto;
+  max-height: 151rem;
   margin-right: 91px;
-  transition: transform 100ms ease-in-out;
+  overflow: hidden;
+  transition: max-height 250ms ease-in-out;
+}
+.header .header-left svg {
+  width: 100%;
 }
 .header .header-right {
   position: relative;
@@ -422,21 +480,31 @@ img.lazyloaded {
 .header .header-right__top {
   display: flex;
   justify-content: space-between;
+  max-height: 96px;
   margin-bottom: 35px;
-  transition: transform 100ms ease-in-out;
+  overflow: hidden;
+  transition: all 250ms ease-in-out;
 }
 .header .header-right--button {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 .header .header-right__nav {
   display: flex;
 }
 .header .header-right__nav .nav-link-group {
   display: none;
+  margin-top: 16px;
+}
+.header .header-right__nav .nav-link-group .nav-link--small {
+  min-width: 20vw;
+}
+.header .header-right__nav .nav-group:last-of-type .nav-link--small {
+  min-width: 10vw;
 }
 .header .header-right__nav .nav-group:hover .nav-link-group {
   display: block;
-  margin-bottom: 2.4rem;
+  width: 0;
+  margin-bottom: 0.8rem;
 }
 .header .header-right__nav .nav-link {
   margin-right: 44px;
@@ -446,7 +514,17 @@ img.lazyloaded {
   color: #ac00e5;
 }
 .header .header-right__nav .nav-link.primary {
-  min-height: 70px;
+  min-height: 40px;
+}
+@media all and (min-width: 1440px) {
+  .header .header-right__nav .nav-link.primary {
+    min-height: 24px;
+  }
+}
+@media all and (max-width: 1024px) {
+  .header .header-right__nav .nav-link.primary {
+    min-height: 56px;
+  }
 }
 .header .header-right__nav .nav-link--small {
   margin-bottom: 8px;
@@ -526,6 +604,9 @@ img.lazyloaded {
 }
 .header-mobile__nav .nav-group.active .nav-link-group {
   display: block;
+}
+.header-mobile__nav .nav-group.active .nav-link.primary:after {
+  content: '–';
 }
 .header-mobile__nav .nav-link {
   position: relative;
@@ -766,18 +847,38 @@ img.lazyloaded {
   width: 100%;
   margin-bottom: 6.4rem;
 }
+.view-wrapper .article-content .row.view-title {
+  margin-bottom: 30px;
+}
+@media all and (max-width: 1024px) {
+  .view-wrapper .article-content .row {
+    margin-bottom: 0;
+  }
+}
 .view-wrapper .article-content .row .column {
   position: relative;
   padding-top: 1.2rem;
   padding-right: 2.2rem;
+}
+@media all and (max-width: 850px) {
+  .view-wrapper .article-content .row .column {
+    padding-right: 0;
+    margin-bottom: 6.4rem;
+  }
 }
 .view-wrapper .article-content .row .column.border:after {
   content: '';
   position: absolute;
   width: calc(100% - 2.2rem);
   top: -10px;
+  left: 0;
   height: 2px;
   background-color: #ffa488;
+}
+@media all and (max-width: 850px) {
+  .view-wrapper .article-content .row .column.border:after {
+    width: 100%;
+  }
 }
 .view-wrapper .article-content .row .column:last-of-type {
   padding-right: 0;
@@ -791,18 +892,30 @@ img.lazyloaded {
 .view-wrapper .article-content .row .double {
   flex-basis: calc(100% / 1.5);
 }
+@media all and (max-width: 850px) {
+  .view-wrapper .article-content .row .double {
+    flex-basis: 100%;
+  }
+}
 .view-wrapper .article-content .row .single {
   flex-basis: calc(100% / 3);
 }
-.view-wrapper .view__title {
-  font-size: 7.8rem;
-  font-family: "Druk", Arial, Sans-Serif;
-  margin-bottom: 20px;
+@media all and (max-width: 850px) {
+  .view-wrapper .article-content .row .single {
+    flex-basis: 100%;
+  }
 }
 .view-wrapper .view__copy {
   position: relative;
 }
+.view-wrapper .view__copy h3 {
+  margin-bottom: 16px;
+}
+.view-wrapper .view__copy figure {
+  position: relative;
+}
 .view-wrapper .view__copy p {
+  margin-bottom: 12px;
   font-family: "Recife", Times, Serif;
 }
 .view-wrapper .view__copy ul,
@@ -913,8 +1026,8 @@ img.lazyloaded {
 }
 .content-lockup__copy h1 p,
 .content-lockup__copy h1 a {
-  font-size: 10rem;
-  line-height: 1;
+  font-size: 7.8rem;
+  line-height: 1.03;
   font-weight: 700;
   margin: 0;
 }

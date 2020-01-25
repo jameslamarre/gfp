@@ -4,21 +4,24 @@
   position: fixed;
   min-width: 100%;
   top: 0;
-  padding: 2.2rem 2.4rem;
+  padding: 2.2rem 2.4rem 3.2rem;
   background-color: white;
   border-bottom: solid 2px purple;
   z-index: 999;
   overflow: hidden;
 
   &.scroll {
-    padding: 0.4rem 2.4rem 0;
+    padding: 0.4rem 2.4rem 1.6rem;
 
     .header-left {
-      visibility: hidden;
-      height: 0;
+      // visibility: hidden;
+      max-height: 0;
     }
+
     .header-right__top {
-      display: none;
+      // display: none;
+      max-height: 0;
+      margin-bottom: 0;
     }
   }
 
@@ -92,8 +95,15 @@
 
   .header-left {
     position: relative;
+    width: auto;
+    max-height: 151rem;
     margin-right: 91px;
-    transition: transform 100ms ease-in-out;
+    overflow: hidden;
+    transition: max-height 250ms ease-in-out;
+
+    svg {
+      width: 100%;
+    }
   }
 
   .header-right {
@@ -108,12 +118,14 @@
     &__top {
       display: flex;
       justify-content: space-between;
+      max-height: 96px;
       margin-bottom: 35px;
-      transition: transform 100ms ease-in-out;
+      overflow: hidden;
+      transition: all 250ms ease-in-out;
     }
 
     &--button {
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     &__nav {
@@ -121,11 +133,21 @@
 
        .nav-link-group {
          display: none;
+         margin-top: 16px;
+
+         .nav-link--small {
+           min-width: 20vw;
+         }
+       }
+
+       .nav-group:last-of-type .nav-link--small {
+         min-width: 10vw;
        }
 
       .nav-group:hover .nav-link-group {
         display: block;
-        margin-bottom: 2.4rem;
+        width: 0;
+        margin-bottom: 0.8rem;
       }
 
       .nav-link {
@@ -137,7 +159,15 @@
         }
 
         &.primary {
-          min-height: 70px;
+          min-height: 40px;
+
+          @media mq-desktop-lg {
+            min-height: 24px;
+          }
+
+          @media mq-tablet-lg {
+            min-height: 56px;
+          }
         }
 
         &--small {

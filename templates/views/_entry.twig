@@ -23,7 +23,19 @@
       {% endif %}
 
       <div class="article-content">
-        <h1 class="view__title row full">{{ entry.title }}</h1>
+        <h1 class="view-title row full">{{ entry.title }}</h1>
+
+        {% if entry.sectionLinks %}
+          {% for block in entry.entryFields.all() %}
+            {% if loop.index != 1 and block.type == 'doubleColumnBlock' %}
+
+              <p>
+                <a href="#{{ loop.index }}" class="arrow down">{{ block.textField|split('</h3>')|first|replace({ '<h3>': '' })|replace({ '&amp;': '&' }) }}</a>
+              </p>
+
+            {% endif %}
+          {% endfor %}
+        {% endif %}
 
         <div class="row">
           {% for block in entry.entryFields.all() %}
@@ -43,7 +55,7 @@
 
             {% switch block.type %}
               {% case 'fullWidthColumnBlock' %}
-                <div class="column full {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                <div id="{{ loop.index }}" class="column full {% if block.topBorder.contains('showBorder') %}border{% endif %}">
                   {% if block.textField %}
                     <div class="view__copy">
                       {{ block.textField }}
@@ -70,7 +82,7 @@
                 </div>
 
               {% case 'doubleColumnBlock' %}
-            <div class="column double {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+            <div id="{{ loop.index }}" class="column double {% if block.topBorder.contains('showBorder') %}border{% endif %}">
                   {% if block.textField %}
                     <div class="view__copy">
                       {{ block.textField }}
@@ -83,7 +95,7 @@
                 </div>
 
               {% case 'singleColumnBlock' %}
-            <div class="column single {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+            <div id="{{ loop.index }}" class="column single {% if block.topBorder.contains('showBorder') %}border{% endif %}">
                   {% if block.textField %}
                     <div class="view__copy">
                       {{ block.textField }}

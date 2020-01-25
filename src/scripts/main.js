@@ -28,7 +28,6 @@ class App {
 	bindGlobalEvents() {
 		window.addEventListener('load', this.turnOffLoader.bind(this));
 
-
 		if (window.innerWidth > 1024) {
 			if (window.location.pathname == '/') {
 				this.content.style.marginTop = this.header.offsetHeight + 35 + "px";
@@ -71,13 +70,11 @@ class App {
   }
 
 	toggleMobileGroups(e) {
-		this.mobileMenuGroups.forEach(function (group, index) {
-			if (group.parentNode.classList.contains('active')) {
-				group.parentNode.classList.remove('active');
-			}
-		});
-
-		e.target.parentNode.classList.add('active');
+		if (e.target.parentNode.classList.contains('active')) {
+			e.target.parentNode.classList.remove('active');
+		} else {
+			e.target.parentNode.classList.add('active');
+		}
 	}
 
 	trackScroll() {
