@@ -256,6 +256,9 @@ blockquote {
   font-style: italic;
   line-height: 1.71;
 }
+.center {
+  text-align: center;
+}
 .serif {
   font-family: "Recife", Times, Serif;
 }
@@ -311,6 +314,37 @@ img.lazyloaded {
 .button:hover {
   color: #fefaff;
   background-color: #ac00e5;
+}
+.related-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.related-list li {
+  position: relative;
+  flex-basis: 50%;
+  margin-bottom: 16px;
+}
+@media all and (max-width: 850px) {
+  .related-list li {
+    flex-basis: 100%;
+  }
+}
+.related-list .related-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.related-list .related-image .content-lockup__image {
+  position: relative;
+  width: 100%;
+}
+.related-list .related-image .content-lockup__image img {
+  width: 100%;
+  min-width: 0;
+  top: 0;
+  left: 0;
+  transform: none;
 }
 .newsletter-form .field-line {
   display: flex;

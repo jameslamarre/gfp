@@ -11,7 +11,26 @@
     {% for entry in craft.entries.section('fourOhFourPage').find()|slice(0,1) %}
 
       <article class="article-wrapper">
-        <h1>{{ entry.textField }}</h1>
+        <div class="center">
+          {{ entry.textField }}
+        </div>
+
+        {% set relatedEntries = entry.relatedEntries.all() %}
+        {% if relatedEntries|length %}
+          <ul class="related-list">
+            {% for related in relatedEntries %}
+            {% set image = related.imageField.one() %}
+              <li>
+                {% if image %}
+                  <a class="related-image" href="{{ related.url }}">
+                    {% include 'components/_asset.twig' %}
+                  </a>
+                {% endif %}
+                <a href="{{ related.url }}">{{ related.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
   		</article>
 
     {% endfor %}

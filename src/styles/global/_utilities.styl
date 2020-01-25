@@ -20,6 +20,41 @@ img.lazyloaded {
   }
 }
 
+.related-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+
+  li {
+    position: relative;
+    flex-basis: 50%;
+    margin-bottom: 16px;
+
+    @media mq-tablet {
+      flex-basis: 100%;
+    }
+  }
+
+  .related-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .content-lockup__image {
+      position: relative;
+      width: 100%;
+
+      img {
+        width: 100%;
+        min-width: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+    }
+  }
+}
+
 .newsletter-form {
   .field-line {
     display: flex;
