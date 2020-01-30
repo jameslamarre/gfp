@@ -945,6 +945,11 @@ img.lazyloaded {
   position: relative;
   width: 100%;
 }
+@media all and (max-width: 640px) {
+  .view-wrapper .view__copy h1 {
+    font-size: 3.8rem;
+  }
+}
 .view-wrapper .view__copy h3 {
   margin-bottom: 16px;
 }
