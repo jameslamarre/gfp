@@ -885,6 +885,11 @@ img.lazyloaded {
 .view-wrapper .article-content .row.view-title {
   margin-bottom: 30px;
 }
+@media all and (max-width: 640px) {
+  .view-wrapper .article-content .row.view-title {
+    font-size: 3.8rem;
+  }
+}
 @media all and (max-width: 1024px) {
   .view-wrapper .article-content .row {
     margin-bottom: 0;
@@ -944,11 +949,6 @@ img.lazyloaded {
 .view-wrapper .view__copy {
   position: relative;
   width: 100%;
-}
-@media all and (max-width: 640px) {
-  .view-wrapper .view__copy h1 {
-    font-size: 3.8rem;
-  }
 }
 .view-wrapper .view__copy h3 {
   margin-bottom: 16px;

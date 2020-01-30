@@ -53,6 +53,10 @@
 
       &.view-title {
         margin-bottom: 30px;
+
+        @media mq-phone-lg {
+          font-size: h1-mobile;
+        }
       }
 
       @media mq-tablet-lg {
@@ -118,12 +122,6 @@
   .view__copy {
     position: relative;
     width: 100%;
-
-    h1 {
-      @media mq-phone-lg {
-        font-size: h1-mobile;
-      }
-    }
 
     h3 {
       margin-bottom: 16px;
