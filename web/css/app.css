@@ -950,6 +950,10 @@ img.lazyloaded {
 }
 .view-wrapper .view__copy figure {
   position: relative;
+  width: 100%;
+}
+.view-wrapper .view__copy figure img {
+  max-width: 100%;
 }
 .view-wrapper .view__copy p {
   margin-bottom: 12px;
