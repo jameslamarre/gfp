@@ -28,7 +28,7 @@ class App {
 	bindGlobalEvents() {
 		window.addEventListener('load', this.turnOffLoader.bind(this));
 
-		if (window.innerWidth > 1024) {
+		if (window.innerWidth > 850) {
 			if (window.location.pathname == '/') {
 				this.content.style.marginTop = this.header.offsetHeight + 35 + "px";
 			} else {

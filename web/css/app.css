@@ -514,7 +514,7 @@ img.lazyloaded {
 .header .header-right__top {
   display: flex;
   justify-content: space-between;
-  max-height: 96px;
+  max-height: 275px;
   margin-bottom: 35px;
   overflow: hidden;
   transition: all 250ms ease-in-out;
@@ -564,7 +564,7 @@ img.lazyloaded {
   margin-bottom: 8px;
 }
 .header .header-right--copy {
-  width: 75%;
+  width: calc(100% - 260px);
 }
 .header-mobile {
   display: none;
@@ -840,6 +840,7 @@ img.lazyloaded {
 }
 .view-wrapper {
   max-width: 939px;
+  min-height: 50vh;
   font-family: "Recife", Times, Serif;
   margin-top: 32px;
   padding-bottom: 64px;
@@ -891,6 +892,7 @@ img.lazyloaded {
 }
 .view-wrapper .article-content .row .column {
   position: relative;
+  max-width: 100%;
   padding-top: 1.2rem;
   padding-right: 2.2rem;
 }
@@ -941,6 +943,7 @@ img.lazyloaded {
 }
 .view-wrapper .view__copy {
   position: relative;
+  width: 100%;
 }
 .view-wrapper .view__copy h3 {
   margin-bottom: 16px;
@@ -1038,6 +1041,7 @@ img.lazyloaded {
   .content-lockup__image img,
   .content-lockup__video img {
     height: auto;
+    max-width: 640px;
   }
 }
 .content-lockup__image iframe,
@@ -1054,6 +1058,11 @@ img.lazyloaded {
   padding: 48px 30px;
   color: #fff;
 }
+@media all and (max-width: 640px) {
+  .content-lockup__copy {
+    max-width: 100%;
+  }
+}
 .content-lockup__copy h1 {
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -1065,7 +1074,18 @@ img.lazyloaded {
   font-weight: 700;
   margin: 0;
 }
+@media all and (max-width: 640px) {
+  .content-lockup__copy h1 p,
+  .content-lockup__copy h1 a {
+    font-size: 3.8rem;
+  }
+}
 .content-lockup__copy .serif + p {
   font-family: "Recife", Times, Serif;
+}
+@media all and (max-width: 640px) {
+  .content-lockup__copy .serif + p {
+    font-size: 1.6rem;
+  }
 }
 /*# sourceMappingURL=app.css.map */

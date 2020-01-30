@@ -74,6 +74,7 @@
 
       @media mq-phone-lg {
         height: auto;
+        max-width: 640px;
       }
     }
 
@@ -90,6 +91,10 @@
     padding: 48px 30px;
     color: white;
 
+    @media mq-phone-lg {
+      max-width: 100%;
+    }
+
     h1 {
       margin-bottom: 10px;
       text-transform: uppercase;
@@ -99,11 +104,19 @@
         line-height: h1-lh;
         font-weight: 700;
         margin: 0;
+
+        @media mq-phone-lg {
+          font-size: 3.8rem;
+        }
       }
     }
 
     .serif + p {
       font-family: Recife;
+
+      @media mq-phone-lg {
+        font-size: 1.6rem;
+      }
     }
   }
 }
