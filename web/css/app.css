@@ -964,6 +964,7 @@ img.lazyloaded {
 }
 .view-wrapper .view__copy figure img {
   max-width: 100%;
+  height: auto;
 }
 .view-wrapper .view__copy p {
   margin-bottom: 12px;
