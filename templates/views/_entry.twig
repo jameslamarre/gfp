@@ -12,17 +12,18 @@
   <div id="" class="view-wrapper">
 
     <article class="article-wrapper">
-      {% if entry.imageField|length %}
-        {% set image = entry.imageField.one() %}
-
-        {% if image %}
-          <div class="column-image">
-            {% include 'components/_inline-image.twig' %}
-          </div>
-        {% endif %}
-      {% endif %}
-
       <div class="article-content">
+
+        {% if entry.imageField|length %}
+          {% set image = entry.imageField.one() %}
+
+          {% if image %}
+            <div class="column-image">
+              {% include 'components/_inline-image.twig' %}
+            </div>
+          {% endif %}
+        {% endif %}
+
         <h1 class="view-title row full">{{ entry.title }}</h1>
 
         {% if entry.sectionLinks|length %}
