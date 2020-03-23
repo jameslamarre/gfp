@@ -16,8 +16,8 @@
         {% set image = entry.imageField.one() %}
 
         {% if image %}
-          <div class="view__image">
-            {% include 'components/_asset.twig' %}
+          <div class="column-image">
+            {% include 'components/_inline-image.twig' %}
           </div>
         {% endif %}
       {% endif %}

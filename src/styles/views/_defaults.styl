@@ -37,6 +37,22 @@
     }
   }
 
+  .article-wrapper .column-image {
+    position: relative;
+    width: 100%;
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .article-content {
     max-width: appMaxWidth;
     margin: 0 auto;
@@ -51,6 +67,7 @@
 
     .row {
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
       width: 100%;
       margin-bottom: 6.4rem;
@@ -71,31 +88,32 @@
         position: relative;
         max-width: 100%;
         padding-top: 1.2rem;
-        padding-right: 2.2rem;
 
         @media mq-tablet {
           padding-right: 0;
           margin-bottom: 6.4rem;
         }
 
-        &.border:after {
-          content: '';
-          position: absolute;
-          width: calc(100% - 2.2rem);
-          top: -10px;
-          left: 0;
-          height: 2px;
-          background-color: orange;
+        &.border {
+          margin-top: 20px;
 
-          @media mq-tablet {
+          &:after {
+            content: '';
+            position: absolute;
             width: 100%;
+            top: -10px;
+            left: 0;
+            height: 2px;
+            background-color: orange;
+
+            @media mq-tablet {
+              width: 100%;
+            }
           }
         }
       }
 
       .column:last-of-type {
-        padding-right: 0;
-
         &.border:after {
           width: 100%;
         }
@@ -106,7 +124,7 @@
       }
 
       .double {
-        flex-basis: calc(100%/1.5);
+        flex-basis: calc(100%/1.5 - 1.5rem);
 
         @media mq-tablet {
           flex-basis: 100%;
@@ -114,22 +132,10 @@
       }
 
       .single {
-        flex-basis: calc(100%/3);
+        flex-basis: calc(100%/3 - 1.5rem);
 
         @media mq-tablet {
           flex-basis: 100%;
-        }
-      }
-
-      .column-image {
-        position: relative;
-        width: 100%;
-        margin-bottom: 32px;
-
-        img {
-          position: relative;
-          width: 100%;
-          height: auto;
         }
       }
     }
