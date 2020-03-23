@@ -945,7 +945,7 @@ img.lazyloaded {
   }
 }
 .view-wrapper .article-content .row .column.border {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 .view-wrapper .article-content .row .column.border:after {
   content: '';
