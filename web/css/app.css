@@ -883,6 +883,9 @@ img.lazyloaded {
     padding: 0 16px;
   }
 }
+.view-wrapper .article-content .section-link:last-of-type {
+  margin-bottom: 32px;
+}
 .view-wrapper .article-content .row {
   display: flex;
   flex-wrap: wrap;
@@ -890,7 +893,7 @@ img.lazyloaded {
   margin-bottom: 6.4rem;
 }
 .view-wrapper .article-content .row.view-title {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 @media all and (max-width: 640px) {
   .view-wrapper .article-content .row.view-title {
@@ -952,6 +955,16 @@ img.lazyloaded {
   .view-wrapper .article-content .row .single {
     flex-basis: 100%;
   }
+}
+.view-wrapper .article-content .row .column-image {
+  position: relative;
+  width: 100%;
+  margin-bottom: 32px;
+}
+.view-wrapper .article-content .row .column-image img {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 .view-wrapper .view__copy {
   position: relative;

@@ -27,12 +27,10 @@
 
         {% if entry.sectionLinks|length %}
           {% for block in entry.entryFields.all() %}
-            {% if loop.index != 1 and block.type == 'doubleColumnBlock' %}
-
-              <p>
+            {% if block.type == 'doubleColumnBlock' %}
+              <p class="section-link">
                 <a href="#{{ loop.index }}" class="arrow down">{{ block.textField|split('</h3>')|first|replace({ '<h3>': '' })|replace({ '&amp;': '&' }) }}</a>
               </p>
-
             {% endif %}
           {% endfor %}
         {% endif %}
@@ -56,14 +54,20 @@
             {% switch block.type %}
               {% case 'fullWidthColumnBlock' %}
                 <div id="{{ loop.index }}" class="column full {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.imageField|length %}
+                    {% set image = block.imageField.one() %}
+
+                    {% if image %}
+                      <div class="column-image">
+                        {% include 'components/_inline-image.twig' %}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+
                   {% if block.textField %}
                     <div class="view__copy">
                       {{ block.textField }}
                     </div>
-                  {% endif %}
-
-                  {% if block.imageField|length %}
-                    {% include 'components/_asset.twig' %}
                   {% endif %}
 
                   {% if block.videoEmbedCode %}
@@ -82,28 +86,40 @@
                 </div>
 
               {% case 'doubleColumnBlock' %}
-            <div id="{{ loop.index }}" class="column double {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                <div id="{{ loop.index }}" class="column double {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.imageField|length %}
+                    {% set image = block.imageField.one() %}
+
+                    {% if image %}
+                      <div class="column-image">
+                        {% include 'components/_inline-image.twig' %}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+
                   {% if block.textField %}
                     <div class="view__copy">
                       {{ block.textField }}
                     </div>
-                  {% endif %}
-
-                  {% if block.imageField|length %}
-                    {% include 'components/_asset.twig' %}
                   {% endif %}
                 </div>
 
               {% case 'singleColumnBlock' %}
-            <div id="{{ loop.index }}" class="column single {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                <div id="{{ loop.index }}" class="column single {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.imageField|length %}
+                    {% set image = block.imageField.one() %}
+
+                    {% if image %}
+                      <div class="column-image">
+                        {% include 'components/_inline-image.twig' %}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+
                   {% if block.textField %}
                     <div class="view__copy">
                       {{ block.textField }}
                     </div>
-                  {% endif %}
-
-                  {% if block.imageField|length %}
-                    {% include 'components/_asset.twig' %}
                   {% endif %}
                 </div>
 

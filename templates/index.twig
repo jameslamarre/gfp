@@ -7,20 +7,26 @@
   <div id="page-index" class="">
     {% for block in entry.contentLockup.all() %}
       {% if block.type == 'contentLockup' %}
-        <div class="content-lockup">
-          {% set image = block.lockupImage.one() %}
+        {% if block.lockupLink|length %}
+         <a href="{{block.lockupLink}}">
+        {% endif %}
+          <div class="content-lockup">
+            {% set image = block.lockupImage.one() %}
 
-          {% if image %}
-            <div class="content-lockup__image">
-              {% include 'components/_asset.twig' %}
+            {% if image %}
+              <div class="content-lockup__image">
+                {% include 'components/_asset.twig' %}
+              </div>
+            {% endif %}
+
+            <div class="content-lockup__copy">
+              <h1>{{block.lockupHeader}}</h1>
+              <p class="serif">{{ block.lockupSubhead }}</p>
             </div>
-          {% endif %}
-
-          <div class="content-lockup__copy">
-            <h1>{{block.lockupHeader}}</h1>
-            <p class="serif">{{ block.lockupSubhead }}</p>
           </div>
-        </div>
+        {% if block.lockupLink|length %}
+          </a>
+        {% endif %}
       {% elseif block.type == 'videoLockup' %}
         <div class="content-lockup video">
           {% set video = block.video.one().filename %}

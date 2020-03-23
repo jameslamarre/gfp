@@ -45,6 +45,10 @@
       padding: 0 16px;
     }
 
+    .section-link:last-of-type {
+      margin-bottom: 32px;
+    }
+
     .row {
       display: flex;
       flex-wrap: wrap;
@@ -52,7 +56,7 @@
       margin-bottom: 6.4rem;
 
       &.view-title {
-        margin-bottom: 30px;
+        margin-bottom: 60px;
 
         @media mq-phone-lg {
           font-size: h1-mobile;
@@ -114,6 +118,18 @@
 
         @media mq-tablet {
           flex-basis: 100%;
+        }
+      }
+
+      .column-image {
+        position: relative;
+        width: 100%;
+        margin-bottom: 32px;
+
+        img {
+          position: relative;
+          width: 100%;
+          height: auto;
         }
       }
     }
