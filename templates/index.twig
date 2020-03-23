@@ -96,6 +96,10 @@
       body {
         background-color: {{ entry.backgroundColor.getHex() }};
       }
+
+      header {
+        background-color: {{ entry.backgroundColor.getHex() }}!important;
+      }
     </style>
   {% endif %}
 {% endblock %}
