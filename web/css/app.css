@@ -452,8 +452,8 @@ img.lazyloaded {
 .header .blob {
   position: absolute;
   border-radius: 50%;
-  z-index: 0;
-  transition: margin 1000ms ease-in-out, opacity 300ms ease-in-out;
+  z-index: 1000;
+  transition: margin 1000ms ease-in-out, opacity 300ms ease-in-out, transform 500ms ease-in-out;
 }
 .header .blob--one {
   width: 100px;
@@ -991,8 +991,11 @@ img.lazyloaded {
   margin-bottom: 16px;
 }
 .view-wrapper .view__copy figure {
+  display: flex;
+  align-items: center;
   position: relative;
   width: 100%;
+  min-height: 29px;
 }
 .view-wrapper .view__copy figure img {
   max-width: 100%;

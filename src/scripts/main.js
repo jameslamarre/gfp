@@ -30,7 +30,7 @@ class App {
 
 		if (window.innerWidth > 850) {
 			if (window.location.pathname == '/') {
-				this.content.style.marginTop = this.header.offsetHeight + 35 + "px";
+				this.content.style.marginTop = this.header.offsetHeight + 31 + "px";
 			} else {
 				this.content.style.marginTop = this.header.offsetHeight + 70 + "px";
 			}
