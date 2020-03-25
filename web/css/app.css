@@ -452,7 +452,7 @@ img.lazyloaded {
 .header .blob {
   position: absolute;
   border-radius: 50%;
-  z-index: 1000;
+  z-index: 0;
   transition: margin 1000ms ease-in-out, opacity 300ms ease-in-out, transform 500ms ease-in-out;
 }
 .header .blob--one {
