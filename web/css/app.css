@@ -471,7 +471,7 @@ img.lazyloaded {
   opacity: 0;
   max-height: 0;
   float: left;
-  margin-top: 20px;
+  margin-top: 19px;
 }
 .header .blob {
   position: absolute;
@@ -550,7 +550,7 @@ img.lazyloaded {
   justify-content: space-between;
   max-height: 275px;
   min-height: 50px;
-  margin-bottom: 35px;
+  margin-bottom: 18px;
   overflow: hidden;
   transition: all 250ms ease-in-out;
 }
