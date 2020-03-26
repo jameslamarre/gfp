@@ -30,6 +30,7 @@
       {% elseif block.type == 'videoLockup' %}
         <div class="content-lockup video">
           {% set video = block.video.one().filename %}
+          {% set poster = block.coverImage.one().getUrl() %}
 
           {% if video %}
             <div class="content-lockup__video">
