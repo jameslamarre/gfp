@@ -129,6 +129,14 @@
           {% endfor %}
         </div>
 
+        {% if entry.pageCta|length %}
+          {% for block in entry.pageCta.all() %}
+            <div class="view__button">
+              <a href="{{block.buttonLink}}" target="_blank" class="button default-weight">{{block.buttonCopy}}</a>
+            </div>
+          {% endfor %}
+        {% endif %}
+
       </div>
 		</article>
   </div>

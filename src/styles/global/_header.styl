@@ -20,13 +20,17 @@
   &.scroll {
     padding: 0.4rem 2.4rem 1.6rem;
 
-    .header-left {
-      // visibility: hidden;
+    .lockup {
       max-height: 0;
     }
 
+    .lockup-mini {
+      max-height: 40px;
+      opacity: 1;
+      transition: opacity 100ms ease-in-out 50ms;
+    }
+
     .header-right__top {
-      // display: none;
       max-height: 0;
       min-height: 0;
       margin-bottom: 0;
@@ -35,6 +39,22 @@
 
   @media mq-tablet {
     position: relative;
+  }
+
+  .lockup {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 100ms ease-in-out;
+  }
+
+  .lockup-mini {
+    display: block;
+    position: relative;
+    opacity: 0;
+    max-height: 0;
+    float: left;
+    margin-top: 20px
   }
 
   .blob {
@@ -108,12 +128,6 @@
     width: auto;
     max-height: 151rem;
     margin-right: 91px;
-    overflow: hidden;
-    transition: max-height 250ms ease-in-out;
-
-    svg {
-      width: 100%;
-    }
   }
 
   .header-right {

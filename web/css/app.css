@@ -323,11 +323,16 @@ img.lazyloaded {
 .button {
   border: solid 2px #ac00e5;
   padding: 11px 31px;
+  font-family: "Druk", Arial, Sans-Serif;
   transition: all 100ms ease-in-out;
 }
 .button:hover {
   color: #fefaff;
   background-color: #ac00e5;
+}
+.button:active,
+.button:visited {
+  color: #54235c;
 }
 .related-list {
   display: flex;
@@ -436,8 +441,13 @@ img.lazyloaded {
 .header.scroll {
   padding: 0.4rem 2.4rem 1.6rem;
 }
-.header.scroll .header-left {
+.header.scroll .lockup {
   max-height: 0;
+}
+.header.scroll .lockup-mini {
+  max-height: 40px;
+  opacity: 1;
+  transition: opacity 100ms ease-in-out 50ms;
 }
 .header.scroll .header-right__top {
   max-height: 0;
@@ -448,6 +458,20 @@ img.lazyloaded {
   .header {
     position: relative;
   }
+}
+.header .lockup {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  transition: max-height 100ms ease-in-out;
+}
+.header .lockup-mini {
+  display: block;
+  position: relative;
+  opacity: 0;
+  max-height: 0;
+  float: left;
+  margin-top: 20px;
 }
 .header .blob {
   position: absolute;
@@ -510,11 +534,6 @@ img.lazyloaded {
   width: auto;
   max-height: 151rem;
   margin-right: 91px;
-  overflow: hidden;
-  transition: max-height 250ms ease-in-out;
-}
-.header .header-left svg {
-  width: 100%;
 }
 .header .header-right {
   position: relative;
@@ -1011,6 +1030,9 @@ img.lazyloaded {
 }
 .view-wrapper .view__copy ul {
   padding-left: 25px;
+}
+.view-wrapper .view__button {
+  margin-top: 32px;
 }
 .content-lockup {
   display: flex;

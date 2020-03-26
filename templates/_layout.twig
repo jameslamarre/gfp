@@ -46,6 +46,16 @@
       .header-dropdown {
         top: -100%;
       }
+
+      .button {
+        border: solid 2px purple;
+        padding: 11px 31px;
+      }
+
+      .button:visited, .button:active {
+        color: #54235c;
+      }
+
 			.loader {
 				position: absolute;
 				width: 100px;
@@ -112,6 +122,12 @@
 			  }
 			}
     </style>
+
+		{% if 'localhost' in craft.app.request.absoluteUrl %}
+      <link rel="stylesheet" href="/css/app.css" />
+	  {% else %}
+      <link rel="stylesheet" href="/css/app.min.css" />
+	  {% endif %}
   </head>
   <body>
 
@@ -124,12 +140,6 @@
 		</div>
 
     {% include 'globals/footer.twig' %}
-
-		{% if 'localhost' in craft.app.request.absoluteUrl %}
-      <link rel="stylesheet" href="/css/app.css" />
-	  {% else %}
-      <link rel="stylesheet" href="/css/app.min.css" />
-	  {% endif %}
 
     {% if 'localhost' in craft.app.request.absoluteUrl %}
       <script type="text/javascript" src="/js/bundle.js"></script>
