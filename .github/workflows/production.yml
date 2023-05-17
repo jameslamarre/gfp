@@ -1,0 +1,34 @@
+name: deploy-production
+
+on:
+  push:
+    branches: [production]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Pull from GitHub
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_PROD_IP }}
+          password: ${{ secrets.HOST_PASSWORD }}
+          username: ${{ secrets.HOST_USERNAME }}
+          script: cd /var/www && git stash && git pull
+      - name: Composer install
+        run: composer install --no-interaction --no-progress --no-suggest --optimize-autoloader
+      - name: Execute structural migration
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_PROD_IP }}
+          username: ${{ secrets.HOST_USERNAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
+          script: |
+            cd /var/www
+            php craft db/backup
+            php craft update/composer-install --interactive=0
+            php craft migrate/all --no-content --interactive=0
+            php craft project-config/apply

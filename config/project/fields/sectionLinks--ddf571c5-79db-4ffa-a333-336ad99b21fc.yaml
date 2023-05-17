@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 43a12f84-7764-4426-8c01-a05e8c6055c5
+handle: sectionLinks
+instructions: 'Select to add links to jump to entry sections'
+name: 'Section Links'
+searchable: true
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Add section jumps'
+        -
+          - value
+          - addSectionJumps
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

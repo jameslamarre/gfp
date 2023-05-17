@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: 43a12f84-7764-4426-8c01-a05e8c6055c5
+handle: relatedEntries
+instructions: ''
+name: 'Related Entries'
+searchable: true
+settings:
+  limit: '4'
+  localizeRelations: false
+  selectionLabel: 'Add an entry'
+  source: null
+  sources:
+    - 'section:9ee4afa5-01dc-4b1e-a449-1bd48fdb11ea' # Page List
+  targetSiteId: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

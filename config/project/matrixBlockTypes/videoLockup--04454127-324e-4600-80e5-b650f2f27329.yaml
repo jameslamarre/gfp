@@ -1,0 +1,122 @@
+field: 60048af4-ec20-4feb-b4a7-8acfbabe0683
+fieldLayouts:
+  a456deba-0657-46c2-9d1f-e5ec56b445eb:
+    tabs:
+      -
+        fields:
+          7bb44713-09d7-494b-a83a-a69939160e33:
+            required: false
+            sortOrder: 3
+          9e43bf58-329d-42d7-8e80-cf6012285b05:
+            required: false
+            sortOrder: 2
+          81a80003-9c7b-42c0-8b0e-2c8a334d82aa:
+            required: false
+            sortOrder: 4
+          877923a2-640f-45c8-9f9b-fa3528911d6a:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  7bb44713-09d7-494b-a83a-a69939160e33:
+    contentColumnType: text
+    fieldGroup: null
+    handle: lockupHeader
+    instructions: ''
+    name: 'Lockup Header'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Links.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  9e43bf58-329d-42d7-8e80-cf6012285b05:
+    contentColumnType: string
+    fieldGroup: null
+    handle: coverImage
+    instructions: 'Add an image to use as a cover for the video before it plays'
+    name: 'Cover Image'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  81a80003-9c7b-42c0-8b0e-2c8a334d82aa:
+    contentColumnType: text
+    fieldGroup: null
+    handle: lockupSubhead
+    instructions: ''
+    name: 'Lockup Subhead'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Links.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  877923a2-640f-45c8-9f9b-fa3528911d6a:
+    contentColumnType: string
+    fieldGroup: null
+    handle: video
+    instructions: 'Add the video asset here'
+    name: Video
+    searchable: true
+    settings:
+      allowedKinds:
+        - video
+      defaultUploadLocationSource: 'volume:8211780b-4991-4165-9e24-98aea3c7fd37'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:8211780b-4991-4165-9e24-98aea3c7fd37'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: videoLockup
+name: 'Video Lockup'
+sortOrder: 2

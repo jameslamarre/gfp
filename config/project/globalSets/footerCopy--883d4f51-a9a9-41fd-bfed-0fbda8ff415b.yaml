@@ -1,0 +1,13 @@
+fieldLayouts:
+  6a5dcfed-ca4b-4255-b3c9-b537ce055e30:
+    tabs:
+      -
+        fields:
+          d499c44e-e0d4-47e4-a4ec-d2f7727d723f:
+            required: false
+            sortOrder: 1
+        name: Copy
+        sortOrder: 1
+handle: footerCopy
+name: 'Footer Copy'
+sortOrder: 1

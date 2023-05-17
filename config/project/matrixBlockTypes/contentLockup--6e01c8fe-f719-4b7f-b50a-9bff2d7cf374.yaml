@@ -1,0 +1,105 @@
+field: 60048af4-ec20-4feb-b4a7-8acfbabe0683
+fieldLayouts:
+  fea9050b-c01a-42d5-868f-73e79e9f58f9:
+    tabs:
+      -
+        fields:
+          1c35fad1-3e10-434f-baa3-1d199405f1c1:
+            required: false
+            sortOrder: 4
+          7f78a050-9047-4e53-9f2b-7ff000e06c3c:
+            required: false
+            sortOrder: 2
+          c1d8be44-8a5a-4a17-b22e-906a74dbb5fc:
+            required: false
+            sortOrder: 3
+          f06caffa-c7e7-4c6f-bad4-defa3dc65daf:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  1c35fad1-3e10-434f-baa3-1d199405f1c1:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: lockupLink
+    instructions: 'Adds a link to the entire block, note links can be added to just the title and subhead separately if needed'
+    name: 'Lockup Link'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  7f78a050-9047-4e53-9f2b-7ff000e06c3c:
+    contentColumnType: text
+    fieldGroup: null
+    handle: lockupHeader
+    instructions: 'Add the header for the lockup'
+    name: 'Lockup Header'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Links.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  c1d8be44-8a5a-4a17-b22e-906a74dbb5fc:
+    contentColumnType: text
+    fieldGroup: null
+    handle: lockupSubhead
+    instructions: 'Add a subhead here'
+    name: 'Lockup Subhead'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Links.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  f06caffa-c7e7-4c6f-bad4-defa3dc65daf:
+    contentColumnType: string
+    fieldGroup: null
+    handle: lockupImage
+    instructions: 'Add one or multiple images'
+    name: 'Lockup Image'
+    searchable: true
+    settings:
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: contentLockup
+name: 'Content Lockup'
+sortOrder: 1

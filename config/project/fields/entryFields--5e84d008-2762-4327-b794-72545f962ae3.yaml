@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 43a12f84-7764-4426-8c01-a05e8c6055c5
+handle: entryFields
+instructions: 'Add content blocks that either span 1/3, 2/3, or the full width of the page. The naming assumes the page is broken up into thirds, or, three columns'
+name: 'Entry Fields'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_entryfields}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

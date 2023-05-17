@@ -1,0 +1,57 @@
+dateModified: 1684349538
+email:
+  fromEmail: jameslamarre@gmail.com
+  fromName: 'Gender Family Project'
+  transportType: craft\mail\transportadapters\Sendmail
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
+meta:
+  __names__:
+    1edefc3b-f27f-4a43-85c8-e94098d20840: 'Footer Twitter Handle' # Footer Twitter Handle
+    1fb2e564-996e-4a4d-958e-e493f4ce0c82: 'Home Page' # Home Page
+    5fae239b-fc55-4e9d-913e-decd8dcc8d3a: 'Header Copy' # Header Copy
+    9afad384-06e8-4351-8419-80343e5374f9: 'Get Help' # Get Help
+    9c7b29fe-1f45-447b-8969-10c74e436307: 'Get Help' # Get Help
+    9ee4afa5-01dc-4b1e-a449-1bd48fdb11ea: 'Page List' # Page List
+    74f79638-484e-4e72-bc38-9ba1a4f3a3e2: 'Footer Instagram Handle' # Footer Instagram Handle
+    81f60665-3082-4ce5-b4ae-355d1670ae60: 'Page List' # Page List
+    883d4f51-a9a9-41fd-bfed-0fbda8ff415b: 'Footer Copy' # Footer Copy
+    4472b7ff-29a2-4c40-8f91-95a621d0cbe9: 'Style Guide' # Style Guide
+    a363bf5b-8a6d-4460-a231-cbb64cd56d98: 'Style Guide' # Style Guide
+    a646d864-70f1-450a-a002-c14e63826e84: 'Footer Facebook Handle' # Footer Facebook Handle
+    a35211f8-5bcb-4cde-bf30-d5e14d414a74: 'Home Page' # Home Page
+    b94bc776-14fa-47f3-9e27-070ac0ed1e2d: '404 Page' # 404 Page
+    b4806441-0d6c-454b-bb7f-e0635e777b94: 'GFP''s response to COVID-19' # GFP's response to COVID-19
+    eec01ffb-1c83-4168-8f7d-291ec9075903: '404 Page' # 404 Page
+    f31e6fae-4509-4964-9397-5805eb2c9d5b: 'GFP''s response to COVID-19' # GFP's response to COVID-19
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  constant-contact:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.1
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: solo
+  live: true
+  name: 'Gender Family Project'
+  schemaVersion: 3.7.33
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: f3888fe6-c608-49b6-9ec5-46b91dd0c97d
+handle: contentLockup
+instructions: 'Add an image, video or slideshow; title, and subhead. Appears on the home page only. '
+name: 'Content Lockup'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_contentlockup}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,80 @@
+field: 60048af4-ec20-4feb-b4a7-8acfbabe0683
+fieldLayouts:
+  2797a0ee-0bf9-4f20-a00f-4537d64c93e5:
+    tabs:
+      -
+        fields:
+          9f106fa9-57ec-472d-8a3c-6be975ba940c:
+            required: false
+            sortOrder: 2
+          5851260e-a520-4af8-9c05-413dc91e170e:
+            required: false
+            sortOrder: 3
+          a25bbf32-1906-4a89-ac5a-0f244aa45000:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  9f106fa9-57ec-472d-8a3c-6be975ba940c:
+    contentColumnType: text
+    fieldGroup: null
+    handle: lockupHeader
+    instructions: ''
+    name: 'Lockup Header'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Links.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  5851260e-a520-4af8-9c05-413dc91e170e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: lockupSubhead
+    instructions: ''
+    name: 'Lockup Subhead'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Links.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  a25bbf32-1906-4a89-ac5a-0f244aa45000:
+    contentColumnType: text
+    fieldGroup: null
+    handle: embedLink
+    instructions: 'Add the youtube video ID here'
+    name: 'Youtube Video ID'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: TCQEcR7pi_Q
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: youtubeVideoLockup
+name: 'Youtube Video Lockup'
+sortOrder: 3

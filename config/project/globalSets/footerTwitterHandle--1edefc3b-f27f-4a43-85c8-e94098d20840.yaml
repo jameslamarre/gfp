@@ -1,0 +1,13 @@
+fieldLayouts:
+  44131e2d-c2bf-44d9-83fe-6386212e7fce:
+    tabs:
+      -
+        fields:
+          d499c44e-e0d4-47e4-a4ec-d2f7727d723f:
+            required: false
+            sortOrder: 1
+        name: 'Twitter Handle'
+        sortOrder: 1
+handle: footerTwitterHandle
+name: 'Footer Twitter Handle'
+sortOrder: 4

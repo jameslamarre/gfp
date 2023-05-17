@@ -1,0 +1,43 @@
+h1 {
+  @apply text-lg;
+  line-height: h1-lh;
+  font-weight: 700;
+  font-family: Druk;
+  margin: 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-md;
+  line-height: h2-lh;
+  font-weight: 300;
+  margin: 0;
+}
+
+a,
+p,
+input,
+li {
+  @apply text-base;
+  line-height: body-lh;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+  line-height: 1;
+  font-weight: 700;
+
+  &.default-weight {
+    font-weight: 300;
+  }
+}
+
+.nav-link a,
+.footer p {
+  @apply text-sm;
+}

@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: 43a12f84-7764-4426-8c01-a05e8c6055c5
+handle: textField
+instructions: 'Use the widget to add text here'
+name: 'Text Field'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

@@ -1,0 +1,94 @@
+field: 5e84d008-2762-4327-b794-72545f962ae3
+fieldLayouts:
+  29818bcb-76c9-48d1-89c1-c8456c0600db:
+    tabs:
+      -
+        fields:
+          a2b95ad0-688e-43b8-b7cd-b27966ade2be:
+            required: false
+            sortOrder: 2
+          dd6a0f8a-f33c-4cb6-935f-2a70ccbad68b:
+            required: false
+            sortOrder: 1
+          f80405de-65cb-4bd5-85f1-9513234f2711:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  a2b95ad0-688e-43b8-b7cd-b27966ade2be:
+    contentColumnType: text
+    fieldGroup: null
+    handle: textField
+    instructions: 'Add copy and embedded inline images here here'
+    name: 'Text Field'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Standard.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  dd6a0f8a-f33c-4cb6-935f-2a70ccbad68b:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageField
+    instructions: 'Add an image'
+    name: 'Image Field'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  f80405de-65cb-4bd5-85f1-9513234f2711:
+    contentColumnType: string
+    fieldGroup: null
+    handle: topBorder
+    instructions: 'Check to show a border at the top of the content block'
+    name: 'Top Border'
+    searchable: true
+    settings:
+      multi: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Show Border'
+            -
+              - value
+              - showBorder
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Checkboxes
+handle: fullWidthColumnBlock
+name: 'Full Width Column Block'
+sortOrder: 1

@@ -1,0 +1,80 @@
+field: 60048af4-ec20-4feb-b4a7-8acfbabe0683
+fieldLayouts:
+  fdd622cb-31b3-4d7f-abd1-9d8b7f24363d:
+    tabs:
+      -
+        fields:
+          a61d653a-5f43-4c88-b040-c216dc898827:
+            required: false
+            sortOrder: 2
+          b07b1e0a-cced-487f-8637-6c051ae489d8:
+            required: true
+            sortOrder: 1
+          fd5a144d-e168-48fb-9a93-e2a851ec0afa:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  a61d653a-5f43-4c88-b040-c216dc898827:
+    contentColumnType: text
+    fieldGroup: null
+    handle: lockupHeader
+    instructions: ''
+    name: 'Lockup Header'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Links.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  b07b1e0a-cced-487f-8637-6c051ae489d8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: embedLink
+    instructions: ''
+    name: 'Facebook Video ID'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: '1592319550798332'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fd5a144d-e168-48fb-9a93-e2a851ec0afa:
+    contentColumnType: text
+    fieldGroup: null
+    handle: lockupSubhead
+    instructions: ''
+    name: 'Lockup Subhead'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Links.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: facebookVideoLockup
+name: 'Facebook Video Lockup'
+sortOrder: 4

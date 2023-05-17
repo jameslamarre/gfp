@@ -1,0 +1,11 @@
+contentColumnType: string(7)
+fieldGroup: 43a12f84-7764-4426-8c01-a05e8c6055c5
+handle: backgroundColor
+instructions: 'Pick a color for the page background'
+name: 'Background Color'
+searchable: true
+settings:
+  defaultColor: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

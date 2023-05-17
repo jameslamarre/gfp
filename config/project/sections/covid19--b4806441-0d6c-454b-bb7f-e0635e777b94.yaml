@@ -1,0 +1,15 @@
+enableVersioning: true
+handle: covid19
+name: 'GFP''s response to COVID-19'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  35707b9d-7d83-4c03-a9d7-ac32c06e1ccb:
+    enabledByDefault: true
+    hasUrls: true
+    template: views/_entry
+    uriFormat: covid-19
+type: single

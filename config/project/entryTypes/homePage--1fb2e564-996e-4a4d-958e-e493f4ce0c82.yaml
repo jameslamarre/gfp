@@ -1,0 +1,25 @@
+fieldLayouts:
+  ba9b4241-a630-4dd2-9ca8-ca03af82a53f:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: ''
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 5f150873-f54d-43d9-847e-61f60318b76c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 60048af4-ec20-4feb-b4a7-8acfbabe0683
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Home
+        sortOrder: 1
+handle: homePage
+hasTitleField: false
+name: 'Home Page'
+section: a35211f8-5bcb-4cde-bf30-d5e14d414a74 # Home Page
+sortOrder: 1
+titleFormat: '{section.name|raw}'

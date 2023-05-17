@@ -1,0 +1,13 @@
+fieldLayouts:
+  e764c720-5c68-41b0-a96a-7bd23e0f2fda:
+    tabs:
+      -
+        fields:
+          d499c44e-e0d4-47e4-a4ec-d2f7727d723f:
+            required: false
+            sortOrder: 1
+        name: Copy
+        sortOrder: 1
+handle: headerCopy
+name: 'Header Copy'
+sortOrder: 5

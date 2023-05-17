@@ -1,0 +1,94 @@
+field: 5e84d008-2762-4327-b794-72545f962ae3
+fieldLayouts:
+  99ad76d4-c64d-476b-8dc2-5fd7d9dbb4c5:
+    tabs:
+      -
+        fields:
+          4ad4277f-9804-430b-9b23-7c7ae9861fff:
+            required: false
+            sortOrder: 2
+          b4940c29-af8b-4ca6-b4d1-5853a1c15f6d:
+            required: false
+            sortOrder: 1
+          cb3350d8-6ba7-4f19-aa94-699bcf756ad7:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  4ad4277f-9804-430b-9b23-7c7ae9861fff:
+    contentColumnType: text
+    fieldGroup: null
+    handle: textField
+    instructions: ''
+    name: 'Text Field'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Standard.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  b4940c29-af8b-4ca6-b4d1-5853a1c15f6d:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageField
+    instructions: 'Add an image'
+    name: 'Image Field'
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:38402d41-2ff3-4e10-8f75-6cbc1edb2981'
+      targetSiteId: null
+      useSingleFolder: ''
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  cb3350d8-6ba7-4f19-aa94-699bcf756ad7:
+    contentColumnType: string
+    fieldGroup: null
+    handle: topBorder
+    instructions: 'Check to show a border at the top of the content block'
+    name: 'Top Border'
+    searchable: true
+    settings:
+      multi: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Show Border'
+            -
+              - value
+              - showBorder
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Checkboxes
+handle: doubleColumnBlock
+name: 'Double Column Block'
+sortOrder: 2

@@ -1,0 +1,160 @@
+.header-mobile {
+  @apply flex md:hidden opacity-0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: beige;
+  z-index: -1;
+  transition: opacity 150ms ease-in-out;
+
+  &.active {
+    opacity: 1;
+    z-index: 999;
+  }
+
+  .blob-mobile {
+    position: absolute;
+    opacity: 0.6;
+    border-radius: 50%;
+    z-index: -1;
+
+    &--one {
+      width: 100px;
+      height: 150px;
+      top: 10%;
+      left: 5%;
+      background-color: purple;
+      box-shadow: 0 0 75px 75px purple;
+    }
+
+    &--two {
+      width: 150px;
+      height: 250px;
+      top: 30%;
+      left: 25%;
+      background-color: orange;
+      box-shadow: 0 0 40px 40px orange;
+    }
+
+    &--three {
+      width: 250px;
+      height: 75px;
+      top: 70%;
+      left: 55%;
+      background-color: aqua;
+      box-shadow: 0 0 35px 35px aqua;
+    }
+
+    &--four {
+      width: 200px;
+      height: 60px;
+      top: 35%;
+      left: 95%;
+      background-color: green;
+      box-shadow: 0 0 50px 50px green;
+    }
+  }
+
+  &__nav {
+    width: calc(100% - 68px);
+    border-right: solid 2px text-purple;
+
+    .nav-link {
+      position: relative;
+      border-bottom: solid 2px text-purple;
+
+      &:after {
+        content: "+";
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        font-size: 32px;
+        transform: translate3d(0, -50%, 0);
+        pointer-events: none;
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 2.6rem 1.7rem;
+      }
+    }
+  }
+
+  &--button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: text-purple;
+    color: white;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__button {
+    @apply hidden md:block;
+    display: none;
+    position: absolute;
+    width: 2.8rem;
+    height: 2.8rem;
+    top: 2.1rem;
+    right: 1.9rem;
+    color: text-purple;
+    cursor: pointer;
+    z-index: 9999;
+
+    &--top,
+    &--middle,
+    &--bottom {
+      display: block;
+      position: relative;
+      width: 2.5rem;
+      height: 0;
+      top: 0;
+      right: 0;
+      margin-bottom: 0.7rem;
+      border-bottom: 2px solid text-purple;
+    }
+
+    &--top {
+      will-change: transform;
+      transition: transform 300ms ease-in-out 50ms;
+    }
+
+    &--middle {
+      transition: opacity 100ms ease-in-out;
+    }
+
+    &--bottom {
+      transition: transform 300ms ease-in-out, width 150ms ease-in-out;
+    }
+
+    &.active {
+      .header-mobile__button--top {
+        width: 2.6rem;
+        border-bottom: 2px solid text-purple;
+        transform: rotate(45deg) translate3d(7px, 9px, 0);
+      }
+
+      .header-mobile__button--middle {
+        opacity: 0;
+      }
+
+      .header-mobile__button--bottom {
+        width: 2.6rem;
+        border-bottom: 2px solid text-purple;
+        transform: rotate(-45deg) translate3d(3px, -6px, 0);
+      }
+    }
+  }
+}

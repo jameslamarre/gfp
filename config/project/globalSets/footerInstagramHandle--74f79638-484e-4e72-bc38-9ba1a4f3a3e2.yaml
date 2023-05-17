@@ -1,0 +1,13 @@
+fieldLayouts:
+  eba588db-0266-455f-8f97-be8263b16bca:
+    tabs:
+      -
+        fields:
+          d499c44e-e0d4-47e4-a4ec-d2f7727d723f:
+            required: false
+            sortOrder: 1
+        name: 'Instagram Handle'
+        sortOrder: 1
+handle: footerInstagramHandle
+name: 'Footer Instagram Handle'
+sortOrder: 3

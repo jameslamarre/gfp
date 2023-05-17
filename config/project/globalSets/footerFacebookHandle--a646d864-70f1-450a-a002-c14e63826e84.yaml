@@ -1,0 +1,13 @@
+fieldLayouts:
+  f76634af-0d2e-4a61-8c96-36c160c7335d:
+    tabs:
+      -
+        fields:
+          d499c44e-e0d4-47e4-a4ec-d2f7727d723f:
+            required: false
+            sortOrder: 1
+        name: 'Facebook Handle'
+        sortOrder: 1
+handle: footerFacebookHandle
+name: 'Footer Facebook Handle'
+sortOrder: 2

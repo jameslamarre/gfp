@@ -1,0 +1,48 @@
+field: 0351adb2-cdbf-42e3-b0e4-53c558df4335
+fieldLayouts:
+  342d8ef6-fd37-4ba4-b54b-16cc8486ffe4:
+    tabs:
+      -
+        fields:
+          8bc15783-85a9-4436-99a2-56fdd120e4ae:
+            required: true
+            sortOrder: 1
+          d994440a-0912-40d4-9f80-4156be83b09a:
+            required: true
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  8bc15783-85a9-4436-99a2-56fdd120e4ae:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: buttonLink
+    instructions: 'Add the url for the button'
+    name: 'Button Link'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  d994440a-0912-40d4-9f80-4156be83b09a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonCopy
+    instructions: 'Add the text that will go in the button'
+    name: 'Button Copy'
+    searchable: true
+    settings:
+      charLimit: '75'
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'Donate Now'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: buttonConfig
+name: 'Button Config'
+sortOrder: 1

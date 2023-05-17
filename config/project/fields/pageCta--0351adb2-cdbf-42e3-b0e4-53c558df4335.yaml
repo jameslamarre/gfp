@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 43a12f84-7764-4426-8c01-a05e8c6055c5
+handle: pageCta
+instructions: 'Add a link that will generate a button on the bottom of the page (ie a button for "Donate Now")'
+name: 'Page CTA'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_pagecta}}'
+  maxBlocks: '1'
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

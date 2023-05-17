@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: pageList
+name: 'Page List'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  35707b9d-7d83-4c03-a9d7-ac32c06e1ccb:
+    enabledByDefault: true
+    hasUrls: true
+    template: views/_entry
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 2
+  uid: 698557d6-9a6c-477f-b99f-05d0dc23b5f5
+type: structure
