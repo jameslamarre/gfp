@@ -4,7 +4,7 @@
   align-items: flex-start;
   position: relative;
   padding: 3.2rem 2.4rem 6rem;
-  border-top: solid 2px purple;
+  border-top: solid 2px $purple;
   overflow: hidden;
 
   .blob-footer {
@@ -18,8 +18,8 @@
       height: 15%;
       top: 30%;
       left: 5%;
-      background-color: orange;
-      box-shadow: 0 0 40px 40px orange;
+      background-color: $orange;
+      box-shadow: 0 0 40px 40px $orange;
     }
 
     &--two {
@@ -27,8 +27,8 @@
       height: 150px;
       top: 30%;
       left: 25%;
-      background-color: aqua;
-      box-shadow: 0 0 35px 35px aqua;
+      background-color: $aqua;
+      box-shadow: 0 0 35px 35px $aqua;
     }
 
     &--three {
@@ -36,8 +36,8 @@
       height: 75px;
       top: 20%;
       left: 75%;
-      background-color: green;
-      box-shadow: 0 0 50px 50px green;
+      background-color: $green;
+      box-shadow: 0 0 50px 50px $green;
     }
 
     &--four {
@@ -45,8 +45,8 @@
       height: 20px;
       top: 85%;
       left: 95%;
-      background-color: purple;
-      box-shadow: 0 0 75px 75px purple;
+      background-color: $purple;
+      box-shadow: 0 0 75px 75px $purple;
     }
   }
 

@@ -9,8 +9,8 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
   font-size: 10px;
-  font-family: Druk;
-  color: text-purple;
+  font-family: $Druk;
+  color: $text-purple;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
 }

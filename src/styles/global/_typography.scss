@@ -1,8 +1,8 @@
 h1 {
   @apply text-lg;
-  line-height: h1-lh;
+  line-height: $h1-lh;
   font-weight: 700;
-  font-family: Druk;
+  font-family: $Druk;
   margin: 0;
 }
 

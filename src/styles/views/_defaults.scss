@@ -4,7 +4,7 @@
 
 .view-wrapper {
   max-width: contentMaxWidth;
-  font-family: Recife;
+  font-family: $Recife;
   margin-top: 32px;
   padding-bottom: 64px;
 
@@ -33,7 +33,7 @@
 
   .view__title {
     font-size: 7.8rem;
-    font-family: Druk;
+    font-family: $Druk;
     margin-bottom: 20px;
   }
 
@@ -41,7 +41,7 @@
     position: relative;
 
     p {
-      font-family: Recife;
+      font-family: $Recife;
     }
 
     ul,

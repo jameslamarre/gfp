@@ -1,14 +1,10 @@
-{% set imageTitle = image.title %}
+{% set primary = craft.app.sites.primarySite %}
 
-{% if image|length and image.kind == 'image' %}
-  {% set imageTransform = craft.imager.transformImage(image, { width: 2000 }) %}
-  {% set imageUrl = imageTransform.url %}
-{% else %}
-  {% set imageUrl = image.getUrl() %}
-{% endif %}
+{% set imageTitle = image.title %}
+{% set imageUrl = image.getUrl() %}
 
 {% if image.kind == 'image' %}
-  <img class="image" alt="{{ imageTitle }}" src="../{{ imageUrl }}" />
+  <img class="image" alt="{{ imageTitle }}" src="{{ siteUrl(imageUrl, siteId=primary.id) }}" />
 {% elseif image.kind == 'video' %}
   <video class="video" {% if controls %}controls{% endif %} {% if autoplay %}autoplay loop{% endif %}>
     <source src="../{{ imageUrl }}"></source>
