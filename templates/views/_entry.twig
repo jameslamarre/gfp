@@ -70,20 +70,6 @@
                       {{ block.textField }}
                     </div>
                   {% endif %}
-
-                  {% if block.videoEmbedCode %}
-                    {% set video = block.facebookEmbedLink %}
-
-                    {% if video %}
-                      <div class="content-lockup__video">
-                        {% include 'components/_video-facebook.twig' %}
-                      </div>
-                    {% endif %}
-
-                    <div class="entry-lockup__caption">
-                      <p class="serif">{{ block.videoCaption }}</p>
-                    </div>
-                  {% endif %}
                 </div>
 
               {% case 'doubleColumnBlock' %}

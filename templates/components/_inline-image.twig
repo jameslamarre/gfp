@@ -1,14 +1,15 @@
+{% set primary = craft.app.sites.primarySite %}
+
 {% if image %}
   {% set imageTitle = image.title %}
-{% else %}
+{% endif %}
+
+{% if not image %}
   {% set image = block.assetField.one() %}
 {% endif %}
 
-{% if image|length and image.kind == 'image' %}
-  {% set imageTransform = craft.imager.transformImage(image, { width: 2000 }) %}
-  {% set imageUrl = imageTransform.url %}
-{% endif %}
+{% set imageUrl = image.getUrl() %}
 
 <div class="inline-image">
-  <img class="image" alt="{{ imageTitle }}" src="../{{ imageUrl }}" />
+  <img class="image" alt="{{ imageTitle }}" src="{{ siteUrl(imageUrl, siteId=primary.id) }}" />
 </div>

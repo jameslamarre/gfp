@@ -1,14 +1,9 @@
 .content-wrapper {
-  margin-top: 290px;
-  // min-height: 80vh;
-
-  @media mq-tablet {
-    margin-top: 0;
-  }
+  @apply mt-0 md:mt-[290px];
 }
 
 .view-wrapper {
-  max-width: contentMaxWidth;
+  max-width: $contentMaxWidth;
   font-family: $Recife;
   min-height: 50vh;
   margin-top: 32px;
@@ -22,18 +17,10 @@
     margin-bottom: 32px;
 
     img {
+      @apply w-auto lg:w-full h-full lg:h-auto left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0;
       position: relative;
-      width: 100%;
-      height: auto;
       top: 50%;
       transform: translate3d(0, -50%, 0);
-
-      @media mq-tablet-lg {
-        width: auto;
-        height: 100%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-      }
     }
   }
 
@@ -54,34 +41,24 @@
   }
 
   .article-content {
-    max-width: appMaxWidth;
+    @apply px-[16px];
+    max-width: $appMaxWidth;
     margin: 0 auto;
-
-    @media mq-tablet-lg {
-      padding: 0 16px;
-    }
 
     .section-link:last-of-type {
       margin-bottom: 32px;
     }
 
     .row {
+      @apply mb-0 sm:mb-[6.4rem];
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       width: 100%;
-      margin-bottom: 6.4rem;
 
       &.view-title {
+        @apply text-[3.8rem] sm:text-[7.8rem];
         margin-bottom: 60px;
-
-        @media mq-phone-lg {
-          font-size: h1-mobile;
-        }
-      }
-
-      @media mq-tablet-lg {
-        margin-bottom: 0;
       }
 
       .column {
@@ -101,10 +78,6 @@
             left: 0;
             height: 2px;
             background-color: orange;
-
-            @media mq-tablet {
-              width: 100%;
-            }
           }
         }
       }
@@ -120,19 +93,11 @@
       }
 
       .double {
-        flex-basis: calc(100% / 1.5 - 1.5rem);
-
-        @media mq-tablet {
-          flex-basis: 100%;
-        }
+        flex-basis: 100%;
       }
 
       .single {
-        flex-basis: calc(100% / 3 - 1.5rem);
-
-        @media mq-tablet {
-          flex-basis: 100%;
-        }
+        flex-basis: 100%;
       }
     }
   }
@@ -175,5 +140,20 @@
 
   .view__button {
     margin-top: 32px;
+  }
+}
+
+@screen md {
+  .view-wrapper {
+    .article-content {
+      .row {
+        .double {
+          flex-basis: calc(100% / 1.5 - 1.5rem);
+        }
+        .single {
+          flex-basis: calc(100% / 3 - 1.5rem);
+        }
+      }
+    }
   }
 }

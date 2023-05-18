@@ -1,20 +1,61 @@
-h1 {
+h1,
+h1 a {
   font-size: $h1-fs;
   line-height: $h1-lh;
   font-weight: 700;
   font-family: $Druk;
-  margin: 0;
+  margin: 0 0 20px;
 }
 
 h2,
-h3,
-h4,
-h5,
-h6 {
+h2 a {
   font-size: $h2-fs;
   line-height: $h2-lh;
   font-weight: 300;
   margin: 0;
+}
+
+h3,
+h3 a {
+  font-size: $h3-fs;
+  line-height: $h3-lh;
+  font-weight: 300;
+  font-family: $Druk;
+  margin: 0;
+}
+
+h4,
+h4 a {
+  font-size: $h4-fs;
+  line-height: $h4-lh;
+  font-weight: 300;
+  font-family: $Druk;
+  margin: 0;
+}
+
+h5,
+h5 a {
+  font-size: $h5-fs;
+  line-height: $h5-lh;
+  font-weight: 300;
+  margin: 0;
+}
+
+h6,
+h6 a {
+  font-size: $h6-fs;
+  line-height: $h6-lh;
+  font-weight: 300;
+  margin: 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: underline;
 }
 
 a,
@@ -28,18 +69,77 @@ li {
 }
 
 a {
+  position: relative;
   color: inherit;
   line-height: 1;
   font-weight: 700;
+  transition: color 100ms ease-in-out;
+
+  &.default-weight {
+    font-weight: 300;
+  }
+
+  &.arrow {
+    font-family: $Druk;
+    font-weight: 500;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 15px;
+      top: 4px;
+      margin-left: 15px;
+      background-image: url("/assets/icons/arrow.svg");
+    }
+  }
+
+  &.arrow.down:after {
+    width: 16px;
+    height: 17px;
+    top: 3px;
+    background-image: url("/assets/icons/arrow-down.svg");
+  }
+}
+
+p a:hover {
+  color: $purple;
+}
+
+.nav-link {
+  line-height: 1.1;
+}
+
+.nav-link a,
+.nav-link span,
+.footer p {
+  font-size: 1.8rem;
+}
+
+.nav-link span {
+  text-transform: uppercase;
+  cursor: pointer;
 
   &.default-weight {
     font-weight: 300;
   }
 }
 
-.nav-link a,
-.footer p {
-  font-size: 1.8rem;
+.nav-link--small a {
+  font-family: $Recife;
+  text-transform: none;
+  font-weight: 600;
+}
+
+blockquote {
+  font-size: 2.8rem;
+  font-family: $Recife;
+  font-style: italic;
+  line-height: 1.71;
+}
+
+.center {
+  text-align: center;
 }
 
 .serif {

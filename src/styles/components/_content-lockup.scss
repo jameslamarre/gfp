@@ -38,7 +38,7 @@
     img {
       position: relative;
       width: auto;
-      min-width: appMaxWidth;
+      min-width: $appMaxWidth;
       max-width: 640px;
       height: auto;
       top: 50%;
