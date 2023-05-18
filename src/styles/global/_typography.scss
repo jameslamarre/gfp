@@ -1,5 +1,5 @@
 h1 {
-  @apply text-lg;
+  font-size: $h1-fs;
   line-height: $h1-lh;
   font-weight: 700;
   font-family: $Druk;
@@ -11,8 +11,8 @@ h3,
 h4,
 h5,
 h6 {
-  @apply text-md;
-  line-height: h2-lh;
+  font-size: $h2-fs;
+  line-height: $h2-lh;
   font-weight: 300;
   margin: 0;
 }
@@ -21,8 +21,8 @@ a,
 p,
 input,
 li {
-  @apply text-base;
-  line-height: body-lh;
+  font-size: $body-fs;
+  line-height: $body-lh;
   font-weight: 300;
   text-decoration: none;
 }
@@ -39,5 +39,9 @@ a {
 
 .nav-link a,
 .footer p {
-  @apply text-sm;
+  font-size: 1.8rem;
+}
+
+.serif {
+  font-family: $Recife;
 }

@@ -1,3 +1,5 @@
+{% set pages = craft.entries.section('pageList').level(1).all() %}
+
 <header class="header">
   <div class="blob blob--one"></div>
   <div class="blob blob--one seconday"></div>
@@ -14,6 +16,10 @@
     <a href="/">
       {% include './icons/_lockup.svg' %}
     </a>
+
+    <a href="/" class="lockup-mini">
+      {% include './svg/lockup-mini.twig' %}
+    </a>
   </div>
 
   <div class="header-right">
@@ -29,40 +35,56 @@
     </div>
 
     <div class="header-right__nav">
-      <ul>
-        <li class="nav-link">
-          <a href="./about" class="default-weight">About</a>
-        </li>
-        <li class="nav-link">
-          <a href="./get-in-touch" class="default-weight">Get In Touch</a>
-        </li>
-      </ul>
+      {% for page in pages %}
+        {% set subPage = craft.entries.descendantOf(page) %}
+        <div class="nav-group">
+          <div class="nav-link primary">
+            <span class="default-weight">{{ page.title }}</span>
+          </div>
+          <ul class="nav-link-group">
+            {% for child in subPage %}
+              <li class="nav-link nav-link--small">
+                <a href="{{ child.url }}">{{ child.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
     </div>
-  </div>
-
-  <div class="header-mobile">
-    <div class="blob-mobile blob-mobile--one"></div>
-    <div class="blob-mobile blob-mobile--two"></div>
-    <div class="blob-mobile blob-mobile--three"></div>
-    <div class="blob-mobile blob-mobile--four"></div>
-
-    <ul class="header-mobile__nav">
-      <li class="nav-link">
-        <a href="./about" class="default-weight">About</a>
-      </li>
-      <li class="nav-link">
-        <a href="./get-in-touch" class="default-weight">Get In Touch</a>
-      </li>
-    </ul>
-
-    <div class="header-mobile--button">
-      <a href="https://www.ackerman.org/donate/" target="_blank" class="default-weight">Donate</a>
-    </div>
-  </div>
-
-  <div class="header-mobile__button">
-    <span class="header-mobile__button--top"></span>
-    <span class="header-mobile__button--middle"></span>
-    <span class="header-mobile__button--bottom"></span>
   </div>
 </header>
+
+<div class="header-mobile">
+  <div class="blob-mobile blob-mobile--one"></div>
+  <div class="blob-mobile blob-mobile--two"></div>
+  <div class="blob-mobile blob-mobile--three"></div>
+  <div class="blob-mobile blob-mobile--four"></div>
+
+  <ul class="header-mobile__nav">
+    {% for page in pages %}
+      {% set subPage = craft.entries.descendantOf(page) %}
+      <div class="nav-group">
+        <div class="nav-link primary">
+          <span class="default-weight">{{ page.title }}</span>
+        </div>
+        <ul class="nav-link-group">
+          {% for child in subPage %}
+            <li class="nav-link nav-link--small">
+              <a href="{{ child.url }}">{{ child.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </ul>
+
+  <div class="header-mobile--button">
+    <a href="https://www.ackerman.org/donate/" target="_blank" class="default-weight">Donate</a>
+  </div>
+</div>
+
+<div class="header-mobile__button">
+  <span class="header-mobile__button--top"></span>
+  <span class="header-mobile__button--middle"></span>
+  <span class="header-mobile__button--bottom"></span>
+</div>

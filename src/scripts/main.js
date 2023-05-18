@@ -6,10 +6,18 @@ class App {
 
 		this.blobs = document.querySelectorAll('.blob');
 
+		this.nav = document.querySelector('.header-right__nav');
+
 		this.mobileMenu = document.querySelector('.header-mobile');
 		this.mobileMenuBtn = document.querySelector('.header-mobile__button');
 
+		this.mobileMenuLists = document.querySelectorAll('.header-mobile__nav .nav-link.primary');
+		this.mobileMenuGroups = document.querySelectorAll('.header-mobile__nav .nav-link-group');
+
     this.content = document.querySelector('.content-wrapper');
+
+		this.videoLockups = document.querySelectorAll('.content-lockup.video')
+		this.videoCopys = document.querySelectorAll('.content-lockup__copy')
 
 		this.footer = document.querySelector('.footer-wrapper')
 		this.loader = document.querySelector('.loader');
@@ -19,13 +27,27 @@ class App {
 
 	bindGlobalEvents() {
 		window.addEventListener('load', this.turnOffLoader.bind(this));
-		// window.addEventListener('scroll', this.trackScroll.bind(this));
 
-		if (window.innerWidth > 1024) {
+		if (window.innerWidth > 850) {
+			if (window.location.pathname == '/') {
+				this.content.style.marginTop = this.header.offsetHeight - 1 + "px";
+			} else {
+				this.content.style.marginTop = this.header.offsetHeight + 70 + "px";
+			}
+
+			window.addEventListener('scroll', this.trackScroll.bind(this));
 			document.addEventListener('mousemove', this.mouseListener.bind(this));
 		}
 
 		this.mobileMenuBtn.addEventListener('click', this.toggleMenu.bind(this));
+
+		for (const list of this.mobileMenuLists) {
+			list.addEventListener('click', this.toggleMobileGroups.bind(this));
+		}
+
+		for (const lockup of this.videoLockups) {
+			lockup.addEventListener('click', this.toggleVideoCopy.bind(this));
+		}
 	}
 
 	turnOffLoader() {
@@ -47,13 +69,32 @@ class App {
     this.mobileMenu.classList.toggle('active');
   }
 
+	toggleMobileGroups(e) {
+		if (e.target.parentNode.classList.contains('active')) {
+			e.target.parentNode.classList.remove('active');
+		} else {
+			e.target.parentNode.classList.add('active');
+		}
+	}
+
 	trackScroll() {
 		let offset = window.pageYOffset;
-		if (offset > 0) {
+
+		if (offset > 150) {
 			this.header.classList.add('scroll');
 		} else {
 			this.header.classList.remove('scroll')
 		}
+	}
+
+	toggleVideoCopy(e) {
+		const id = e.target.getAttribute('data-id');
+
+		this.videoCopys.forEach(function (copy, index) {
+			if (copy.getAttribute('data-id') == id) {
+				copy.classList.add('hidden');
+			}
+		});
 	}
 
 	mouseListener(e) {

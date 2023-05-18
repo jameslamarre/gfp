@@ -1,0 +1,14 @@
+{% if image %}
+  {% set imageTitle = image.title %}
+{% else %}
+  {% set image = block.assetField.one() %}
+{% endif %}
+
+{% if image|length and image.kind == 'image' %}
+  {% set imageTransform = craft.imager.transformImage(image, { width: 2000 }) %}
+  {% set imageUrl = imageTransform.url %}
+{% endif %}
+
+<div class="inline-image">
+  <img class="image" alt="{{ imageTitle }}" src="../{{ imageUrl }}" />
+</div>

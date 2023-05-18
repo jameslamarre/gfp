@@ -2,5 +2,18 @@
   "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video"],
   "plugins": ["fullscreen", "video"],
   "linkNewTab": true,
-  "toolbarFixed": true
+  "toolbarFixed": true,
+  "imageResizable": true,
+  "imagePosition": true,
+  "formattingAdd": {
+    "arrow-link": {
+      "title": "Arrow Link",
+      "api": "module.block.format",
+      "args": {
+        "tag": "a",
+        "class": "arrow",
+        "type": "add"
+      }
+    }
+  }
 }

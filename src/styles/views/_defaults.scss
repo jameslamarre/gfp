@@ -1,10 +1,16 @@
 .content-wrapper {
-  // margin-top: 239px;
+  margin-top: 290px;
+  // min-height: 80vh;
+
+  @media mq-tablet {
+    margin-top: 0;
+  }
 }
 
 .view-wrapper {
   max-width: contentMaxWidth;
   font-family: $Recife;
+  min-height: 50vh;
   margin-top: 32px;
   padding-bottom: 64px;
 
@@ -31,17 +37,130 @@
     }
   }
 
-  .view__title {
-    font-size: 7.8rem;
-    font-family: $Druk;
-    margin-bottom: 20px;
+  .article-wrapper .column-image {
+    position: relative;
+    width: 100%;
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .article-content {
+    max-width: appMaxWidth;
+    margin: 0 auto;
+
+    @media mq-tablet-lg {
+      padding: 0 16px;
+    }
+
+    .section-link:last-of-type {
+      margin-bottom: 32px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 6.4rem;
+
+      &.view-title {
+        margin-bottom: 60px;
+
+        @media mq-phone-lg {
+          font-size: h1-mobile;
+        }
+      }
+
+      @media mq-tablet-lg {
+        margin-bottom: 0;
+      }
+
+      .column {
+        @apply pr-0 mb-[6.4rem] md:mb-0;
+        position: relative;
+        max-width: 100%;
+        padding-top: 1.2rem;
+
+        &.border {
+          margin-top: 12px;
+
+          &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: -10px;
+            left: 0;
+            height: 2px;
+            background-color: orange;
+
+            @media mq-tablet {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .column:last-of-type {
+        &.border:after {
+          width: 100%;
+        }
+      }
+
+      .full {
+        flex-basis: 100%;
+      }
+
+      .double {
+        flex-basis: calc(100% / 1.5 - 1.5rem);
+
+        @media mq-tablet {
+          flex-basis: 100%;
+        }
+      }
+
+      .single {
+        flex-basis: calc(100% / 3 - 1.5rem);
+
+        @media mq-tablet {
+          flex-basis: 100%;
+        }
+      }
+    }
   }
 
   .view__copy {
     position: relative;
+    width: 100%;
+
+    h3 {
+      margin-bottom: 16px;
+    }
+
+    figure {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      min-height: 29px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
 
     p {
       font-family: $Recife;
+      margin-bottom: 12px;
     }
 
     ul,
@@ -54,7 +173,7 @@
     }
   }
 
-  .article-content {
-    @apply py-[16px] lg:py-0;
+  .view__button {
+    margin-top: 32px;
   }
 }

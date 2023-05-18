@@ -1,0 +1,9 @@
+<video controls
+        data-id="{{ loop.index }}"
+        poster="{% if poster|length %} {{poster}} {% endif %}" >
+
+    <source src="assets/videos/{{ video }}"
+            type="video/mp4">
+
+    Sorry, your browser doesn't support embedded videos.
+</video>

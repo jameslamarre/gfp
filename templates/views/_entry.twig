@@ -5,56 +5,138 @@
  #}
 
 {% extends "_layout" %}
+{% set rowLength = 0 %}
+{% set blockLength = 0 %}
 
 {% block content %}
   <div id="" class="view-wrapper">
 
     <article class="article-wrapper">
-      {% if entry.imageField|length %}
-        {% set image = entry.imageField.one() %}
-
-        {% if image %}
-          <div class="view__image">
-            {% include 'components/_asset.twig' %}
-          </div>
-        {% endif %}
-      {% endif %}
-
       <div class="article-content">
-        <h1 class="view__title">{{ entry.title }}</h1>
 
-        {% for block in entry.entryFields.all() %}
-          {% if block.type == 'entryAsset' %}
-            <div class="content-lockup">
-              {% set image = block.assetField.one() %}
+        {% if entry.imageField|length %}
+          {% set image = entry.imageField.one() %}
 
-              {% if image %}
-                <div class="content-lockup__image">
-                  {% include 'components/_asset.twig' %}
-                </div>
-              {% endif %}
-            </div>
-          {% elseif block.type == 'entryVideoEmbed' %}
-            <div class="content-lockup">
-              {% set video = block.facebookEmbedLink %}
-
-              {% if video %}
-                <div class="content-lockup__video">
-                  {% include 'components/_video-facebook.twig' %}
-                </div>
-              {% endif %}
-
-              <div class="entry-lockup__caption">
-                <p class="serif">{{ block.videoCaption }}</p>
-              </div>
-            </div>
-          {% elseif block.type == 'entryTextBlock' %}
-            <div class="view__copy">
-              {{ block.textField }}
+          {% if image %}
+            <div class="column-image">
+              {% include 'components/_inline-image.twig' %}
             </div>
           {% endif %}
-        {% endfor %}
-        
+        {% endif %}
+
+        <h1 class="view-title row full">{{ entry.title }}</h1>
+
+        {% if entry.sectionLinks|length %}
+          {% for block in entry.entryFields.all() %}
+            {% if block.type == 'doubleColumnBlock' %}
+              <p class="section-link">
+                <a href="#{{ loop.index }}" class="arrow down">{{ block.textField|split('</h3>')|first|replace({ '<h3>': '' })|replace({ '&amp;': '&' }) }}</a>
+              </p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        <div class="row">
+          {% for block in entry.entryFields.all() %}
+            {% switch block.type %}
+            {% case 'fullWidthColumnBlock' %}
+              {% set blockLength = 3 %}
+            {% case 'doubleColumnBlock' %}
+              {% set blockLength = 2 %}
+            {% case 'singleColumnBlock' %}
+              {% set blockLength = 1 %}
+            {% endswitch %}
+
+            {% if rowLength + blockLength > 3 %}
+              </div><div class="row">
+              {% set rowLength = 0 %}
+            {% endif %}
+
+            {% switch block.type %}
+              {% case 'fullWidthColumnBlock' %}
+                <div id="{{ loop.index }}" class="column full {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.imageField|length %}
+                    {% set image = block.imageField.one() %}
+
+                    {% if image %}
+                      <div class="column-image">
+                        {% include 'components/_inline-image.twig' %}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+
+                  {% if block.textField %}
+                    <div class="view__copy">
+                      {{ block.textField }}
+                    </div>
+                  {% endif %}
+
+                  {% if block.videoEmbedCode %}
+                    {% set video = block.facebookEmbedLink %}
+
+                    {% if video %}
+                      <div class="content-lockup__video">
+                        {% include 'components/_video-facebook.twig' %}
+                      </div>
+                    {% endif %}
+
+                    <div class="entry-lockup__caption">
+                      <p class="serif">{{ block.videoCaption }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+
+              {% case 'doubleColumnBlock' %}
+                <div id="{{ loop.index }}" class="column double {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.imageField|length %}
+                    {% set image = block.imageField.one() %}
+
+                    {% if image %}
+                      <div class="column-image">
+                        {% include 'components/_inline-image.twig' %}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+
+                  {% if block.textField %}
+                    <div class="view__copy">
+                      {{ block.textField }}
+                    </div>
+                  {% endif %}
+                </div>
+
+              {% case 'singleColumnBlock' %}
+                <div id="{{ loop.index }}" class="column single {% if block.topBorder.contains('showBorder') %}border{% endif %}">
+                  {% if block.imageField|length %}
+                    {% set image = block.imageField.one() %}
+
+                    {% if image %}
+                      <div class="column-image">
+                        {% include 'components/_inline-image.twig' %}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+
+                  {% if block.textField %}
+                    <div class="view__copy">
+                      {{ block.textField }}
+                    </div>
+                  {% endif %}
+                </div>
+
+            {% endswitch %}
+            {% set rowLength = rowLength + blockLength %}
+          {% endfor %}
+        </div>
+
+        {% if entry.pageCta|length %}
+          {% for block in entry.pageCta.all() %}
+            <div class="view__button">
+              <a href="{{block.buttonLink}}" target="_blank" class="button default-weight">{{block.buttonCopy}}</a>
+            </div>
+          {% endfor %}
+        {% endif %}
+
       </div>
 		</article>
   </div>
@@ -63,6 +145,10 @@
     <style type="text/css">
       body {
         background-color: {{ entry.backgroundColor.getHex() }};
+      }
+
+      header {
+        background-color: {{ entry.backgroundColor.getHex() }}!important;
       }
     </style>
   {% endif %}
