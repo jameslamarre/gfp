@@ -38,6 +38,7 @@
     img {
       position: absolute;
       width: auto;
+      min-width: 100%;
       max-width: none;
       height: 100%;
       top: 50%;
@@ -83,31 +84,9 @@
   }
 }
 
-@screen sm {
-  .content-lockup {
-    height: auto;
-
-    &__image,
-    &__video {
-      img {
-        height: auto;
-      }
-    }
-  }
-}
-
 @screen md {
   .content-lockup {
-    height: auto;
     min-height: 340px;
-
-    &__image,
-    &__video {
-      img {
-        height: 100%;
-        width: auto;
-      }
-    }
   }
 }
 
@@ -116,12 +95,5 @@
     height: 64vh;
     min-height: 600px;
     max-height: 810px;
-
-    &__image,
-    &__video {
-      img {
-        min-width: 100%;
-      }
-    }
   }
 }
