@@ -1561,7 +1561,8 @@ img.lazyloaded {
 .content-lockup__image img, .content-lockup__video img {
   position: absolute;
   width: auto;
-  height: auto;
+  max-width: none;
+  height: 100%;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
@@ -1626,7 +1627,7 @@ img.lazyloaded {
 @media (min-width: 1024px) {
   .content-lockup {
     height: 64vh;
-    min-height: 690px;
+    min-height: 600px;
     max-height: 810px;
   }
   .content-lockup__image img, .content-lockup__video img {
