@@ -34,18 +34,16 @@
     min-width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.3);
 
     img {
       position: absolute;
       width: auto;
-      min-width: $appMaxWidth;
-      max-width: 640px;
       height: auto;
       top: 50%;
       left: 50%;
       transform: translate3d(-50%, -50%, 0);
       opacity: 0.9;
+      object-fit: cover;
     }
 
     iframe,
@@ -121,8 +119,7 @@
     &__image,
     &__video {
       img {
-        width: auto;
-        height: 100%;
+        min-width: 100%;
       }
     }
   }
