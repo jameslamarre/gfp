@@ -38,7 +38,8 @@
     img {
       position: absolute;
       width: auto;
-      height: auto;
+      max-width: none;
+      height: 100%;
       top: 50%;
       left: 50%;
       transform: translate3d(-50%, -50%, 0);
@@ -113,7 +114,7 @@
 @screen lg {
   .content-lockup {
     height: 64vh;
-    min-height: 690px;
+    min-height: 600px;
     max-height: 810px;
 
     &__image,
