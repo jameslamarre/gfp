@@ -14,9 +14,7 @@
             {% set image = block.lockupImage.one() %}
 
             {% if image %}
-              <div class="content-lockup__image">
-                {% include 'components/_asset.twig' %}
-              </div>
+              {% include 'components/_asset.twig' %}
             {% endif %}
 
             <div class="content-lockup__copy">
