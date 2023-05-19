@@ -12,3 +12,5 @@ yarn.lock
 web/.htaccess
 web/.htpasswd
 web/data/*
+web/assets/images/*
+web/assets/videos/*
