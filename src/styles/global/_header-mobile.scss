@@ -1,5 +1,5 @@
 .header-mobile {
-  @apply flex opacity-0 md:hidden;
+  @apply flex opacity-0 lg:hidden;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -133,7 +133,7 @@
   }
 
   &__button {
-    @apply block md:hidden;
+    @apply block lg:hidden;
     position: absolute;
     width: 2.8rem;
     height: 2.8rem;

@@ -1,7 +1,7 @@
 .header {
-  @apply relative md:fixed;
+  @apply relative lg:fixed;
   display: flex;
-  min-width: 100%;
+  width: 100%;
   top: 0;
   padding: 2.2rem 2.4rem 3.2rem;
   background-color: white;
@@ -19,7 +19,7 @@
     .lockup-mini {
       max-height: 40px;
       opacity: 1;
-      transition: opacity 100ms ease-in-out 50ms;
+      transition: opacity 100ms ease-in-out 200ms;
     }
 
     .header-right__top {
@@ -34,7 +34,7 @@
     width: 100%;
     max-height: 200px;
     overflow: hidden;
-    transition: max-height 100ms ease-in-out;
+    transition: max-height 300ms ease-in-out;
   }
 
   .lockup-mini {
@@ -120,7 +120,7 @@
   .header-right {
     display: none;
     position: relative;
-    width: 100%;
+    width: calc(100% - 91px);
     margin-top: 20px;
 
     &__top {
@@ -130,7 +130,7 @@
       min-height: 50px;
       margin-bottom: 18px;
       overflow: hidden;
-      transition: all 250ms ease-in-out;
+      transition: all 300ms ease-in-out;
     }
 
     &--button {
@@ -141,10 +141,14 @@
       display: flex;
 
       .nav-link-group {
-        display: none;
-        margin-top: 16px;
+        position: relative;
+        width: 0;
+        max-height: 0;
+        opacity: 0;
+        transition: all 300ms ease-in-out;
 
         .nav-link--small {
+          position: relative;
           min-width: 20vw;
           margin-bottom: 8px;
         }
@@ -161,9 +165,10 @@
       }
 
       .nav-group:hover .nav-link-group {
-        display: block;
-        width: 0;
-        margin-bottom: 0.8rem;
+        position: relative;
+        max-height: 200px;
+        padding-top: 16px;
+        opacity: 1;
       }
 
       .nav-link {
@@ -198,7 +203,7 @@
     }
 
     &--copy {
-      width: calc(100% - 260px);
+      padding-right: 1rem;
 
       h2 {
         @media mq-desktop {
@@ -209,7 +214,7 @@
   }
 }
 
-@screen md {
+@screen lg {
   .header {
     .header-right {
       display: block;

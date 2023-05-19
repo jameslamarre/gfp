@@ -872,14 +872,14 @@ img.lazyloaded {
 .header{
   position: relative;
 }
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .header{
     position: fixed;
   }
 }
 .header {
   display: flex;
-  min-width: 100%;
+  width: 100%;
   top: 0;
   padding: 2.2rem 2.4rem 3.2rem;
   background-color: white;
@@ -896,7 +896,7 @@ img.lazyloaded {
 .header.scroll .lockup-mini {
   max-height: 40px;
   opacity: 1;
-  transition: opacity 100ms ease-in-out 50ms;
+  transition: opacity 100ms ease-in-out 200ms;
 }
 .header.scroll .header-right__top {
   max-height: 0;
@@ -908,7 +908,7 @@ img.lazyloaded {
   width: 100%;
   max-height: 200px;
   overflow: hidden;
-  transition: max-height 100ms ease-in-out;
+  transition: max-height 300ms ease-in-out;
 }
 .header .lockup-mini {
   display: block;
@@ -982,7 +982,7 @@ img.lazyloaded {
 .header .header-right {
   display: none;
   position: relative;
-  width: 100%;
+  width: calc(100% - 91px);
   margin-top: 20px;
 }
 .header .header-right__top {
@@ -992,7 +992,7 @@ img.lazyloaded {
   min-height: 50px;
   margin-bottom: 18px;
   overflow: hidden;
-  transition: all 250ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 .header .header-right--button {
   margin-top: 15px;
@@ -1001,10 +1001,14 @@ img.lazyloaded {
   display: flex;
 }
 .header .header-right__nav .nav-link-group {
-  display: none;
-  margin-top: 16px;
+  position: relative;
+  width: 0;
+  max-height: 0;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
 }
 .header .header-right__nav .nav-link-group .nav-link--small {
+  position: relative;
   min-width: 20vw;
   margin-bottom: 8px;
 }
@@ -1017,9 +1021,10 @@ img.lazyloaded {
   min-width: 10vw;
 }
 .header .header-right__nav .nav-group:hover .nav-link-group {
-  display: block;
-  width: 0;
-  margin-bottom: 0.8rem;
+  position: relative;
+  max-height: 200px;
+  padding-top: 16px;
+  opacity: 1;
 }
 .header .header-right__nav .nav-link {
   margin-right: 44px;
@@ -1049,7 +1054,7 @@ img.lazyloaded {
   cursor: pointer;
 }
 .header .header-right--copy {
-  width: calc(100% - 260px);
+  padding-right: 1rem;
 }
 @media mq-desktop {
   .header .header-right--copy h2 {
@@ -1057,7 +1062,7 @@ img.lazyloaded {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .header .header-right {
     display: block;
   }
@@ -1066,7 +1071,7 @@ img.lazyloaded {
   display: flex;
   opacity: 0;
 }
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .header-mobile{
     display: none;
   }
@@ -1187,7 +1192,7 @@ img.lazyloaded {
 .header-mobile__button{
   display: block;
 }
-@media (min-width: 768px){
+@media (min-width: 1024px){
   .header-mobile__button{
     display: none;
   }
