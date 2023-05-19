@@ -42,7 +42,7 @@
             <span class="default-weight">{{ page.title }}</span>
           </div>
           <ul class="nav-link-group">
-            {% for child in subPage %}
+            {% for child in subPage.all() %}
               <li class="nav-link nav-link--small">
                 <a href="{{ child.url }}">{{ child.title }}</a>
               </li>
@@ -68,7 +68,7 @@
           <span class="default-weight">{{ page.title }}</span>
         </div>
         <ul class="nav-link-group">
-          {% for child in subPage %}
+          {% for child in subPage.all() %}
             <li class="nav-link nav-link--small">
               <a href="{{ child.url }}">{{ child.title }}</a>
             </li>

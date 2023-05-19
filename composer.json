@@ -1,9 +1,9 @@
 {
 	"require": {
 		"clubstudioltd/craft-asset-rev": "^6.0",
-		"craftcms/cms": "3.7.59",
-		"craftcms/redactor": "2.10.10",
-		"madebyraygun/constant-contact": "0.1.2",
+		"craftcms/cms": "3.8.11",
+		"craftcms/redactor": "2.10.12",
+		"madebyraygun/constant-contact": "0.1.3",
 		"vlucas/phpdotenv": "^3.4.0"
 	},
 	"require-dev": {

@@ -8,7 +8,7 @@
 {% block content %}
   <div id="page-project" class="view-wrapper">
 
-    {% for entry in craft.entries.section('fourOhFourPage').find()|slice(0,1) %}
+    {% for entry in craft.entries.section('fourOhFourPage').all()|slice(0,1) %}
 
       <article class="article-wrapper">
         <div class="center">

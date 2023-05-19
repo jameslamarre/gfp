@@ -1,4 +1,4 @@
-dateModified: 1684349538
+dateModified: 1684528706
 email:
   fromEmail: jameslamarre@gmail.com
   fromName: 'Gender Family Project'
@@ -47,7 +47,7 @@ system:
   edition: solo
   live: true
   name: 'Gender Family Project'
-  schemaVersion: 3.7.33
+  schemaVersion: 3.8.0.1
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
